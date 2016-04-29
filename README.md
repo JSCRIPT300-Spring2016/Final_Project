@@ -16,4 +16,4 @@ Fork this repository for your final project. For week 3, you will be adding your
 
 *include your proposal in this README after this line:*
 
-Project Concept: A pizza locator using google maps. Possibly with a rating feature. 
+Project Concept: A pizza locator using google maps and geolocation. Possibly with a rating feature. 
