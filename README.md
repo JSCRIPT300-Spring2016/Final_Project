@@ -23,8 +23,14 @@ A user will be able to enter their name for identification.
 A user will be able to enter their ideas, one at a time.
 
 A user will be able to evaluate ideas in a given group of ideas.
+
 Done with basic product.
+
 Advanced features are:
+
 A user will be able to rank the ideas best to worst.
+
 A user will be able to delete an idea he owns.
+
 A user will be determine equivalent ideas.
+
