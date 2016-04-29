@@ -17,8 +17,11 @@ Fork this repository for your final project. For week 3, you will be adding your
 *include your proposal in this README after this line:*
 
 This is an application to enter, rank and evaluate ideas.
+
 A user will be able to enter their name for identification.
+
 A user will be able to enter their ideas, one at a time.
+
 A user will be able to evaluate ideas in a given group of ideas.
 Done with basic product.
 Advanced features are:
