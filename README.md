@@ -15,3 +15,9 @@ Fork this repository for your final project. For week 3, you will be adding your
 **I strongly recommend you keep your project simple**. There is a lot to do here, and any complexity will blow up the amount of time and effort required to complete it. Remember to build the simplest thing possible to achieve the task your application is meant to accomplish and avoid feature creep. You can always iterate on what you've built *after* you've completed the minimum viable product.
 
 *include your proposal in this README after this line:*
+
+A bit of background first - last year I was golfing with some friends.  It was a hot summer day (perfect for golf) and we came across a drink cart where the cart girl was selling margaritas.  Not an uncommon occurrence I've since discovered but it was new to me at the time.  So we had a couple (or so).  Afterwards we had nachos in the restaurant.  It happens that the nachos at this course are very, very good.  For the rest of the summer we would look for margaritas and nachos at any course we happened to play.  We didn't always find one or the other and only rarely both but it became a "thing" and the Nacho Tour was born.  Quite silly but that's part of the fun.
+
+Even before I signed up for the JavaScript certificate program I thought it would be cool to have a web site where one could rate the nachos (and perhaps even margaritas) at various golf courses.  I can see some GIS functionality for this web site eventually but I think to start with - and to keep it very, very simple - it would basically be a restaurant review web site.
+
+So I don't really know what the end goal is or even how to get started but this seems like a good opportunity to put my very limited JavaScript and web-development skills to use.
