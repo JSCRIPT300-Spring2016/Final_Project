@@ -15,3 +15,21 @@ Fork this repository for your final project. For week 3, you will be adding your
 **I strongly recommend you keep your project simple**. There is a lot to do here, and any complexity will blow up the amount of time and effort required to complete it. Remember to build the simplest thing possible to achieve the task your application is meant to accomplish and avoid feature creep. You can always iterate on what you've built *after* you've completed the minimum viable product.
 
 *include your proposal in this README after this line:*
+
+Hi James!  
+
+I apologize for the late entry.  For my final project I was thinking of making a game using the phaser framework.  
+This is the same framework I used for my project in the previous class and I would like to do more with it.
+
+The game I was thinking of would be like this.  I'd call it 'Feed the Puppies' probably.
+
+Puppies would scroll sideways across screen.  Their mouths open and close at random.
+As the player you are holding treats above them at the center top of the screen and click to drop the treat.
++1 if a puppy catches the treat
+-1 if it is not caught
+The game would end at either a certain score or a time limit.
+The game will save your score and tell you if you have the high score.
+
+Do you think this is an appropriate difficulty or scope for this project?
+
+Thank you!
