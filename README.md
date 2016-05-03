@@ -15,3 +15,15 @@ Fork this repository for your final project. For week 3, you will be adding your
 **I strongly recommend you keep your project simple**. There is a lot to do here, and any complexity will blow up the amount of time and effort required to complete it. Remember to build the simplest thing possible to achieve the task your application is meant to accomplish and avoid feature creep. You can always iterate on what you've built *after* you've completed the minimum viable product.
 
 *include your proposal in this README after this line:*
+I would like to propose a record collection cataloger for my final project. In the main interface, the user will be presented with a list of their records. They will be able to add, remove and edit their entries here. When the user chooses to add to their list, an add new item interface will appear. They will be able to add new records to the list and will have various options for cataloging their entries, such as:
+Artist Name
+Title
+Label
+Year
+Genre
+For Sale
+Sold
+Import
+Format
+Image
+The user will be able to sort their list according to these options.
