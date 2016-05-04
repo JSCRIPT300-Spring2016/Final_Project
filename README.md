@@ -16,6 +16,17 @@ Fork this repository for your final project. For week 3, you will be adding your
 
 # Final_Project: Proposal (Katja Borchert)
 
+Edited Proposal (see original proposal at the bottom:
+I was wondering if a "Real Estate" App wouldn't be a better idea for this final project.
+House Inventory Module on server side with express router module to organize the data.
+Backbone Application to present data on client side.
+
+What do you think?
+
+
+
+Original Proposal:
+
 Topic: Data Representation Tool for a Memory Experiment
 
 Server Side:
