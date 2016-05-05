@@ -15,3 +15,13 @@ Fork this repository for your final project. For week 3, you will be adding your
 **I strongly recommend you keep your project simple**. There is a lot to do here, and any complexity will blow up the amount of time and effort required to complete it. Remember to build the simplest thing possible to achieve the task your application is meant to accomplish and avoid feature creep. You can always iterate on what you've built *after* you've completed the minimum viable product.
 
 *include your proposal in this README after this line:*
+
+Proposal:
+--------
+
+Build a general merchandise website consisting of the following features:
+- Display items and their prices.
+- User can click on each item to view picture of the item and detailed description.
+- User can choose the items and add to shopping cart.
+- User places the order, chooses delivery options and method of payments.
+- User sees a receipt of the order.
