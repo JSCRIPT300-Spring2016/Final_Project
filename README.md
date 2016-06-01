@@ -15,3 +15,19 @@ Fork this repository for your final project. For week 3, you will be adding your
 **I strongly recommend you keep your project simple**. There is a lot to do here, and any complexity will blow up the amount of time and effort required to complete it. Remember to build the simplest thing possible to achieve the task your application is meant to accomplish and avoid feature creep. You can always iterate on what you've built *after* you've completed the minimum viable product.
 
 *include your proposal in this README after this line:*
+
+Proposal:
+I would like to build a web UI that displays music album artwork for my catalog of music.
+
+The data will come from https://musicbrainz.org and will be stored in a mongoDB. Due to time constraint I prefer the data to be gathered manually.
+
+On load, the site will make calls into the DB to extract and display the album artwork thumbnails. 
+
+Each artwork thumbnail can be hovered over (dimming overlay) and can be invoked to display details about the album. Clicking an album cover will make a call to the service, which retrieves and displays Musician and album information. ie, Artist involved, date and location produced. example output: https://musicbrainz.org/doc/Development/JSON_Web_Service.
+
+
+
+
+
+
+
