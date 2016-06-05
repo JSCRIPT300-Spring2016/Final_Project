@@ -1,0 +1,16 @@
+{
+  "name": "mybandapp",
+  "version": "1.0.0",
+  "description": "final",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "heidi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "lodash": "^4.13.1"
+  }
+}
