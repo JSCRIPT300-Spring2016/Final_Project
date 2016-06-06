@@ -16,6 +16,13 @@ Fork this repository for your final project. For week 3, you will be adding your
 
 *include your proposal in this README after this line:*
 
+Hi James!
+After looking at the level of complexity of my previous idea, I have changed my plan for the final project.  What I'd like to do is create a pricing calendar.  My boyfriend makes custom props and sculptures and it would be really helpful for him to have a calculator to help him figure out how to price his work.  It would take into account the amount and cost of materials he uses, as well as the estimated time till completion.  I've begun work on this and I think it's a lot more suitable to the requirements of the assignment.  Would you approve of this idea for a final project?
+
+Thank you!
+
+
+
 Hi James!  
 
 I apologize for the late entry.  For my final project I was thinking of making a game using the phaser framework.  
