@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prop Calculator</title>
+  <link rel="stylesheet" href="trucks.css" />
+</head>
+<body>
+  <h1>Prop Calculator</h1>
+  <h2>Add Props:</h2>
+  <form>
+    <fieldset>
+      <legend>New Prop:</legend>
+      <div class="form_input">
+        <input type="text" name="name" placeholder="Name" />
+      </div>
+      <legend>Materials:</legend>
+      <div class="form_input">
+        <p>Wood Length:  <input type="number" name="wood" placeholder="inches" /></p>
+      </div>
+      <div class="form_input">
+        <p>Foam square footage<input type="number" name="foam" placeholder="sq ft" /></p>
+      </div>
+      <div class="form_input">
+        <p>MDF square footage<input type="number" name="mdf" placeholder="sq ft" /></p>
+      </div>
+      <div class="form_input">
+        <p>ApoxCoat Red volume<input type="number" name="apoxCoat" placeholder="oz" /></p>
+      </div>
+      <div class="form_input">
+        <p>Paint Cans<input type="number" name="paint" placeholder="number of cans" /></p>
+      </div>
+      <div class="form_input">
+        <p>Man-hours of active work<input type="number" name="manHours" placeholder="hours" /></p>
+      </div>
+      <div class="form_input">
+        <p>Duration from start to finish<input type="number" name="duration" placeholder="hours" /></p>
+      </div>
+    </fieldset>
+    <input type="submit" value="Add Prop" />
+  </form>
+  <h2>Prop Cost:</h2>
+  <ul class="trucks-list"></ul>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
