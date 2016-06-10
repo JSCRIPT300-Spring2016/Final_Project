@@ -1,8 +1,14 @@
 // model: https://github.com/ccoenraets/nodecellar/blob/e249ca3be83e75a26710d81ce5ad95c3404f78d5/public/js/main.js
+var Backbone = require('backbone');
+
+// var mainRouter = require('./routers/mainRouter');
+// var mainController = require('./controllers/mainController');
 
 var $ = require('jquery');
 $(function () {
-
+  // this.mainRouter = new mainRouter({ mainController: mainController });
+  // Backbone.history.start({ pushState: true });
+  // Backbone.history.start();
   var MainView = require('./views/MainView');
   var mainView = new MainView({ el: 'body' });
 });
