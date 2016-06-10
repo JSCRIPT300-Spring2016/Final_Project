@@ -1,14 +1,15 @@
 var Backbone = require('backbone');
 
-var initialPlants = require('../../plants');
+var plantData = require('../models/plant');
+var initialPlants = require('../plants');
+var plantListCollection = require('../collections/PlantListCollection');
 var plantItemModel = require('../models/plantItemModel');
-var plant = require('../models/plant');
 
 //this should create a list of plants (which feeds into mainController)
 
-
 module.exports = Backbone.View.extend({
   tagName: 'li',
+  // model: 'plant',
   events: {},
   initialize: function() {
     this.model.on('change', this.render, this);
