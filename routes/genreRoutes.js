@@ -4,40 +4,26 @@ var express = require('express');
 var bodyparser = require('body-parser');
 var bands = require('../bands');
 
-//this is the model 
 var Band = require('../models/bandModel');
-
 var urlEncoded = bodyparser.urlencoded({ extended: false });
 var router = express.Router();
 
-//calling to the db via Band.find to get my data and manipulate it
+
+//returns the genre array at /genre
 router.route('/')
 	.get(function (request, response) {
-		Band.find(function (error, results) {
+		Band.distinct('genre', function (error, results) {
 			if (error) {
 				response.status(500).send(error);
 			} else {
 				response.send(results);
 			}
-		});
-  });
-
-//returns object of one band via their name ie bands/Bonobo from mongodb
-router.route('/:name')
-	.get(function (request, response) {
-		var name = request.params.name;
-
-		Band.find({ name: { $in: [name] }  }, function (error, results) {
-			if (error) {
-				response.status(500).send(error);
-			} else {
-				response.send(results);
-			}
-		});
 	});
-	router.route('/:genre')
+});
+//returns all bands that fall within this genre at /genre/genreName
+router.route('/:genreName')
 	.get(function (request, response) {
-		var genre = request.params.genre;
+		var genre = request.params.genreName;
 
 		Band.find({ genre: { $in: [genre] }  }, function (error, results) {
 			if (error) {
@@ -49,6 +35,3 @@ router.route('/:name')
 	});
 
 module.exports = router;
-
-
-
