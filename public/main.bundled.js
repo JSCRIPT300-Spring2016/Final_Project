@@ -54317,7 +54317,7 @@ module.exports = {
   }
 };
 
-},{"../models/plant":308,"../views/FormView":312,"../views/header":314,"../views/plantListView":315}],307:[function(require,module,exports){
+},{"../models/plant":308,"../views/FormView":311,"../views/header":313,"../views/plantListView":314}],307:[function(require,module,exports){
 // model: https://github.com/ccoenraets/nodecellar/blob/e249ca3be83e75a26710d81ce5ad95c3404f78d5/public/js/main.js
 
 var $ = require('jquery');
@@ -54408,7 +54408,7 @@ $(function () {
 //
 // Backbone.history.start();
 
-},{"./views/MainView":313,"jquery":303}],308:[function(require,module,exports){
+},{"./views/MainView":312,"jquery":303}],308:[function(require,module,exports){
 var Backbone = require('backbone');
 
 module.exports = Backbone.Model.extend({
@@ -54424,24 +54424,6 @@ module.exports = Backbone.Model.extend({
 });
 
 },{"backbone":1}],309:[function(require,module,exports){
-var Backbone = require('backbone');
-
-var initialPlants = require('../plants');
-var plant = require('../models/plant');
-
-module.exports = Backbone.View.extend({
-  tagName: 'li',
-  events: {},
-  initialize: function() {
-    this.model.on('change', this.render, this);
-  },
-  render: function() {
-    this.$el.html(this.model.get('name') + '<ul><li>Number of plants: ' + this.model.get('number') + '</li> <li>Space per plant: ' + this.model.get('spaceNeededPerPlant') + '</li> <li>Total space needed: ' + this.model.get('totalSpaceNeeded') + '</li> <li>Date planted: ' + this.model.get('datePlanted') + '</li> <li>Date harvested: ' + this.model.get('dateHarvested') + '</li></ul>');
-    return this;
-  }
-});
-
-},{"../models/plant":308,"../plants":310,"backbone":1}],310:[function(require,module,exports){
 var express = require('express');
 
 // var initialPlants = {
@@ -54468,7 +54450,7 @@ module.exports = [{
     "spaceNeeded": 0.25
   }]
 
-},{"express":2}],311:[function(require,module,exports){
+},{"express":2}],310:[function(require,module,exports){
 var Backbone = require('backbone');
 var header = require('../views/header');
 
@@ -54485,7 +54467,7 @@ module.exports = Backbone.Router.extend({
   }
 });
 
-},{"../views/header":314,"backbone":1}],312:[function(require,module,exports){
+},{"../views/header":313,"backbone":1}],311:[function(require,module,exports){
 var Backbone = require('backbone');
 
 module.exports = Backbone.View.extend({
@@ -54496,7 +54478,7 @@ module.exports = Backbone.View.extend({
   }
 });
 
-},{"backbone":1}],313:[function(require,module,exports){
+},{"backbone":1}],312:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var mainRouter = require('../routers/mainRouter');
@@ -54514,7 +54496,7 @@ module.exports = Backbone.View.extend({
   }
 });
 
-},{"../controllers/mainController":306,"../routers/mainRouter":311,"backbone":1}],314:[function(require,module,exports){
+},{"../controllers/mainController":306,"../routers/mainRouter":310,"backbone":1}],313:[function(require,module,exports){
 // var Header = Backbone.View.extend({
 //   // el: '#header',
 //   initialize: function(){
@@ -54538,13 +54520,13 @@ module.exports = Backbone.View.extend({
    }
  })
 
-},{"backbone":1}],315:[function(require,module,exports){
+},{"backbone":1}],314:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var plantData = require('../models/plant');
 var initialPlants = require('../plants');
 var plantListCollection = require('../collections/PlantListCollection');
-var plantItemModel = require('../models/plantItemModel');
+var plantItemModel = require('../models/plant');
 
 //this should create a list of plants (which feeds into mainController)
 
@@ -54556,9 +54538,11 @@ module.exports = Backbone.View.extend({
     this.model.on('change', this.render, this);
   },
   render: function() {
-    this.$el.html(this.model.get('name') + '<ul><li>Number of plants: ' + this.model.get('number') + '</li> <li>Space per plant: ' + this.model.get('spaceNeededPerPlant') + '</li> <li>Total space needed: ' + this.model.get('totalSpaceNeeded') + '</li> <li>Date planted: ' + this.model.get('datePlanted') + '</li> <li>Date harvested: ' + this.model.get('dateHarvested') + '</li></ul>');
+    this.$el.html(this.model.get('name') + '<ul><li>Number of plants: ' + this.model.get('number') + '</li> <li>Space per plant: ' + this.model.get('spaceNeededPerPlant') + '</li> <li>Total space needed: ' + this.model.get('totalSpaceNeeded') + '</li></ul>');
     return this;
   }
 });
+ // add in later:
+ //  + '</li> <li>Date planted: ' + this.model.get('datePlanted') + '</li> <li>Date harvested: ' + this.model.get('dateHarvested') +
 
-},{"../collections/PlantListCollection":305,"../models/plant":308,"../models/plantItemModel":309,"../plants":310,"backbone":1}]},{},[307]);
+},{"../collections/PlantListCollection":305,"../models/plant":308,"../plants":309,"backbone":1}]},{},[307]);
