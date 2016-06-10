@@ -15,3 +15,7 @@ Fork this repository for your final project. For week 3, you will be adding your
 **I strongly recommend you keep your project simple**. There is a lot to do here, and any complexity will blow up the amount of time and effort required to complete it. Remember to build the simplest thing possible to achieve the task your application is meant to accomplish and avoid feature creep. You can always iterate on what you've built *after* you've completed the minimum viable product.
 
 *include your proposal in this README after this line:*
+
+I hope to create a simple music cataloging and or review app.
+
+A good friend of mine is also porgrams and we are both very much into music. After this class we hope to build an app together that involves helping people find music that is more in-tune with their tastes and may lean towards more obscure genres. I'm forever searching the web for new music via spotify, pandora, soundcloud etc. and often feel dissapointed in the their results. 
