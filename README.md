@@ -34,3 +34,8 @@ A user will be able to delete an idea he owns.
 
 A user will be determine equivalent ideas.
 
+AS BUILT NOTES:
+
+Load mongo database data using -- mongo idea_1API < ideaJSON.js
+
+Only the application display sections were developed.
