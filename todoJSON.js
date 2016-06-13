@@ -1,4 +1,4 @@
-db.tasks.insert([
+db.todoAPI.insert([
   {
     name: 'Important Task 1',
     important: true,
