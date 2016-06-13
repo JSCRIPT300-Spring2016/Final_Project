@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ToDo App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1 class="pageHeading">
+        <p id="title">Todo App</p>
+         <div id='formArea'>
+    <h2>Add A Task:</h2>
+    <form>
+        <div class="form_input">
+          <input type="text" name="name" placeholder="New Task" />
+          <input type="checkbox" name="important" id="important" inputValue= 1 />
+          <label for="important">Important</label>
+        </div>
+      <input id='submitBtn' type="submit" value="Add" />
+    </form>
+      </div>
+      </h1>
+      <nav id="todoNav">
+        <ul class="todoNav__list">
+          <li class="todoNav__item">
+            <a id="allTodos" href="/" class="navLink">All Todos</a>
+          </li>
+          <li class="todoNav__item">
+            <a id="impTodos" href="/important" class="navLink">Important Todos</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section role="main">
+      <div id="results"></div>
+    </section>
+  </div>
+
+  <script src="/js/templates/templates.js"></script>
+  <script src="/js/main.bundled.js"></script>
+</body>
+
+</html>

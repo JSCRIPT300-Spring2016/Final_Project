@@ -1,0 +1,34 @@
+{
+  "name": "Todo App JS300 Final Project",
+  "version": "1.0.0",
+  "description": "Node, Express, MongoDB, and Backbone todo list application",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Joe Childress",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "express": "^4.13.4",
+    "jquery": "^2.2.4",
+    "lodash": "^4.13.1",
+    "mongoose": "^4.4.20"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.8.0",
+    "grunt-contrib-jst": "^0.6.0"
+  }
+}
