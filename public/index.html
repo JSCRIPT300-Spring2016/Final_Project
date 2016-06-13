@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>Final Project</title>
+    <link rel='stylesheet' href='chatstyle.css' type='text/css' />
+</head>
+<body>
+    <div id="backgroundImage" class="backgroundImageStyle"></div>
+
+    <div id="card" class="cardStyle">
+
+        <div id="titleBar" class="titleBarStyle">
+            <img src="icon-aim.png" class="iconStyle" />&nbsp&nbspfinal project messenger
+        </div>
+
+        <div>
+
+            <div class="menuBarStyle">
+                <div class="menuButtonStyle"><a href="#">Home</a></div>
+                <div class="menuButtonStyle"><a href="#you">Profile</a></div>
+                <div class="menuButtonStyle"><a href="#aboutThis">About</a></div>
+            </div>
+
+            <img src="infoicon.png" class="headerStyle" />
+
+            <div id="renderHerePlease" class="renderHerePleaseStyle"></div>
+
+            <div id="messageContainer" class="messageContainerStyle">
+                <ul id="messages"></ul>
+            </div>
+
+        </div>
+
+        <span id="notifyUser" class="notifyUserStyle"></span>
+
+        <form id="form" action="" onsubmit="return submitfunction();">
+            <input id="m" autocomplete="off" onkeyup="notifyTyping();" placeholder="type here..." /><input type="submit" id="button" value="send" />
+        </form>
+    </div>
+
+    <div id="bootScreen" class="bootScreenStyle"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="views/homeView.js"></script>
+    <script src="views/aboutThisView.js"></script>
+    <script src="views/youView.js"></script>
+    <script src="routes/router.js"></script>
+    <script src="models/userModel.js"></script>
+    <script src="fpApp.js"></script>
+    <script src="init.js"></script>
+    <script src="chat.js"></script>
+
+</body>
+</html>
