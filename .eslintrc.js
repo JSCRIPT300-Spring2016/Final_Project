@@ -4,7 +4,8 @@ module.exports = {
     },
     'globals': {
       'module': true,
-      'require': true
+      'require': true,
+      'TFT': true
     },
 
     'extends': 'eslint:recommended',
