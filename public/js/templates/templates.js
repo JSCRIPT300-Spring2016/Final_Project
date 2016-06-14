@@ -25,7 +25,7 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<img class="deleteBtn" src="/img/smlCancel.svg" alt="delete">\n<span class="todoName">' +
-((__t = ( name )) == null ? '' : __t) +
+__e( name ) +
 '</span>';
 
 }
