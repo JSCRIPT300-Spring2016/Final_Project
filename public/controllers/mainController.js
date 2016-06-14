@@ -11,19 +11,19 @@ var header = new Header();
 var formView = new FormView();
 
 module.exports = {
-showHome: function() {
-  console.log('you should see the header');
-  header.render();
-  formView.render();
-},
+  showHome: function() {
+    console.log('you should see the header');
+    header.render();
+    formView.render();
+  },
 
-allPlants: function() {
-  var that = this;
-  var plantCollection = new PlantListCollection();
-  plantCollection.reset(plants);
-  _(plantCollection.models).each(function(plant) {
-    var view = new PlantListView({ model: plant });
-    $('#list-of-plants').append(view.render().el);
-  });
-}
+  allPlants: function() {
+    var that = this;
+    var plantCollection = new PlantListCollection();
+    plantCollection.reset(plants);
+    _(plantCollection.models).each(function(plant) {
+      var view = new PlantListView({ model: plant });
+      $('#list-of-plants').append(view.render().el);
+    });
+  }
 }

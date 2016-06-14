@@ -13310,21 +13310,21 @@ var header = new Header();
 var formView = new FormView();
 
 module.exports = {
-showHome: function() {
-  console.log('you should see the header');
-  header.render();
-  formView.render();
-},
+  showHome: function() {
+    console.log('you should see the header');
+    header.render();
+    formView.render();
+  },
 
-allPlants: function() {
-  var that = this;
-  var plantCollection = new PlantListCollection();
-  plantCollection.reset(plants);
-  _(plantCollection.models).each(function(plant) {
-    var view = new PlantListView({ model: plant });
-    $('#list-of-plants').append(view.render().el);
-  });
-}
+  allPlants: function() {
+    var that = this;
+    var plantCollection = new PlantListCollection();
+    plantCollection.reset(plants);
+    _(plantCollection.models).each(function(plant) {
+      var view = new PlantListView({ model: plant });
+      $('#list-of-plants').append(view.render().el);
+    });
+  }
 }
 
 },{"../collections/PlantListCollection":4,"../models/plant":7,"../plants":8,"../views/FormView":10,"../views/header":12,"../views/plantListView":13,"underscore":3}],6:[function(require,module,exports){
@@ -13478,7 +13478,7 @@ module.exports = Backbone.Router.extend({
     console.log('initialized main router');
     options || {};
     this.mainController = options.mainController;
-    this.mainController.showHome();
+    // this.mainController.showHome();
     //this should be in home
     // this.mainController.allPlants();
   },
@@ -13491,6 +13491,7 @@ module.exports = Backbone.Router.extend({
   home: function() {
     console.log('a new route!');
     //this should be working but isn't
+    this.mainController.showHome();
     this.mainController.allPlants();
   }
 });
@@ -13517,7 +13518,6 @@ module.exports = Backbone.View.extend({
     //add something
   },
   initialize: function(e) {
-    //add controller stuff in here
     console.log('main view working');
     this.mainRouter = new mainRouter({ mainController: mainController });
     // this.mainRouter.on
@@ -13527,7 +13527,7 @@ module.exports = Backbone.View.extend({
     // help here? http://slides.com/kinakuta/deck-17?token=vY03XdtR#/8
     // may need vent
 
-    Backbone.history.start({ hashChange: false, root: '/' });
+    Backbone.history.start({ hashChange: false, pushState: true, root: '/' });
   }
 });
 

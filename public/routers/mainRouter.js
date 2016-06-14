@@ -11,9 +11,6 @@ module.exports = Backbone.Router.extend({
     console.log('initialized main router');
     options || {};
     this.mainController = options.mainController;
-    this.mainController.showHome();
-    //this should be in home
-    // this.mainController.allPlants();
   },
   alAlarm: function() {
     alert('oh it works!');
@@ -24,6 +21,7 @@ module.exports = Backbone.Router.extend({
   home: function() {
     console.log('a new route!');
     //this should be working but isn't
+    this.mainController.showHome();
     this.mainController.allPlants();
   }
 });

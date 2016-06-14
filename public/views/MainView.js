@@ -8,7 +8,6 @@ module.exports = Backbone.View.extend({
     //add something
   },
   initialize: function(e) {
-    //add controller stuff in here
     console.log('main view working');
     this.mainRouter = new mainRouter({ mainController: mainController });
     // this.mainRouter.on
@@ -18,6 +17,6 @@ module.exports = Backbone.View.extend({
     // help here? http://slides.com/kinakuta/deck-17?token=vY03XdtR#/8
     // may need vent
 
-    Backbone.history.start({ hashChange: false, root: '/' });
+    Backbone.history.start({ hashChange: false, pushState: true, root: '/' });
   }
 });
