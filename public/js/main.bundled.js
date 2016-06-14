@@ -29936,22 +29936,20 @@ var Houses = Backbone.Collection.extend({
 
 module.exports = Houses;
 },{"../models/House":9,"backbone":1,"lodash":4}],6:[function(require,module,exports){
-//general controller for the Results View: the area that changes throughout depending on events
-
 'use strict';
 
 var ResultsView = require('../views/ResultsView');
 var Houses = require('../collections/Houses');
 var vent = require('../events/Vent');
 
-var houses = new Houses(); //instance of the house collection
+var houses = new Houses();
 var resultsView = new ResultsView({ el: '#results', collection: houses });
-var jqxhr = houses.fetch(); //a jquery 'promise' object ; yeah! found the fetch command!
+var jqxhr = houses.fetch();
 
 //Events to listen to:
 vent.on('allHouses:selected', showAllHouses);
 vent.on('addHome:selected', showAddForm);
-vent.on('house:selected', showHouse); //I made it a class; hahaha!
+vent.on('house:selected', showHouse);
 vent.on('home:selected', showHome);
 vent.on('deleteHouse:selected', deleteHouse);
 
@@ -29968,7 +29966,8 @@ function showAllHouses() {
   });
 }
 
-function showHouse(options) {
+//change to id as it's the id that is handed in in router
+function showHouse(options) {         //options: how do I know what gets handed in?
 	var model = options.model;
   jqxhr.done(function () {
 	//console.log("id ", model.id);
@@ -30011,21 +30010,18 @@ module.exports = {
 var _ = require('lodash');
 var Backbone = require('backbone');
 
-module.exports = _.extend({}, Backbone.Events);
+module.exports = _.extend({}, Backbone.Events); //what does this do exactly?
 
 },{"backbone":1,"lodash":4}],8:[function(require,module,exports){
-//temp note: seems to be done
 'use strict';
 
 var $ = require('jquery');
-
 
 $(function () {
 
   var AppView = require('./views/AppView'); //AppView: top level component
   var app = new AppView({ el: 'body' }); //it's in charge of the body (therefore pretty much all of it)
 });
-
 },{"./views/AppView":12,"jquery":3}],9:[function(require,module,exports){
 'use strict';
 
@@ -30064,8 +30060,6 @@ var House = Backbone.Model.extend({
 module.exports = House;
 
 },{"backbone":1}],10:[function(require,module,exports){
-//temp Notes: some open questions here
-
 'use strict';
 var Backbone = require('backbone');
 
@@ -30077,7 +30071,7 @@ var Router = Backbone.Router.extend({
 	'addHouse': 'showHouseForm',
 	'deleteHouse': 'deleteHouse'
   },
-  //this I am not clear about
+
   initialize: function (options) {
     options || {};//don't quite understand this code
     this.appController = options.appController;
@@ -30090,13 +30084,14 @@ var Router = Backbone.Router.extend({
   },
   showHouseForm: function(){
 	console.log('no add form yet: under construction');
+	this.appController.showAddForm();
   },	
   showHouse: function (id) {
     this.appController.showHouse({ id: id });
   },
   
   deleteHouse:function (id) {
-    this.appController.deleteHouse({ id: id});
+    this.appController.deleteHouse({ id: id });
   }
 
 });
@@ -30117,16 +30112,10 @@ module.exports = Backbone.View.extend({
     this.$el.append(this.template());
     return this;
   },
-  
-  /*
-  //not sure about this one :)
+    
   remove: function () {
-	console.log("Igethere");//
-    this._children.forEach(function (view) {
-      view.remove();
-    });
     Backbone.View.prototype.remove.call(this); //no idea what this does; looks super fancy though
-  }*/
+  }
 });
 
 },{"backbone":1,"lodash":4}],12:[function(require,module,exports){
@@ -30142,14 +30131,14 @@ var vent = require('../events/Vent');
 
 module.exports = Backbone.View.extend({ 
   events: {
-    '#home': 'showHome'
+    'click #home': 'showHome'
   },
   
   initialize: function () {
     var navView = new NavView({ el: '#choices' });
-    var navigationEvents = ['allHouses', 'house', 'home', 'addHome']; //all the navigation events possible in the navigation?
+    var navigationEvents = ['allHouses', 'house', 'home', 'addHome'];
 
-    this.appRouter = new AppRouter({ appController: appController }); //we send the appController to the router
+    this.appRouter = new AppRouter({ appController: appController });
 
     this.navigateSelected = this.navigateSelected.bind(this);
     navigationEvents.forEach(function (event) {
@@ -30167,10 +30156,7 @@ module.exports = Backbone.View.extend({
     this.appRouter.navigate(options.path);
   }
 });
-
 },{"../controllers/AppController":6,"../events/Vent":7,"../routers/AppRouter":10,"./NavView":16,"backbone":1}],13:[function(require,module,exports){
-//pretty much done: might have to add the template in here
-
 'use strict';
 
 var _ = require('lodash');
@@ -30184,11 +30170,10 @@ module.exports = Backbone.View.extend({
 
   events: {
     'click a': 'handleClick',
-	'click button': 'handleButtonClick'
+	'click .deleteHouse': 'handleButtonClick'
   },
   render: function () {
     var data = _.extend(this.model.attributes, this.model.id);
-	console.log("the data " + data);
     this.$el.append(this.template(data));
 	
     return this;
@@ -30218,6 +30203,10 @@ module.exports = Backbone.View.extend({
 
     return this;
   },  
+  
+  remove: function () {
+    Backbone.View.prototype.remove.call(this);
+  }
 });
 },{"backbone":1,"lodash":4}],15:[function(require,module,exports){
 'use strict';
@@ -30231,18 +30220,12 @@ module.exports = Backbone.View.extend({
   className: 'allHousesList',
   id: 'dynamicHouseList',
   template: TFT.allHouses,
-  _children: [], //empty array for all children views
+  _children: [],
   
   render: function () {
     this.$el.append(this.template());
-	
-	/*
-	this.collection.each(function(model){
-			console.log("Model: " + model); 
-	});*/
 
     this.collection.each(function (model) { 
-		//console.log("itemviews");
       var itemView = new HouseItemView({ model: model });
 	  
       this._children.push(itemView);
@@ -30252,19 +30235,15 @@ module.exports = Backbone.View.extend({
     return this;
   },
   
-  //not sure about this one :)
   remove: function () {
-	console.log("Igethere");//
     this._children.forEach(function (view) {
       view.remove();
     });
-    Backbone.View.prototype.remove.call(this); //no idea what this does; looks super fancy though
+    Backbone.View.prototype.remove.call(this);
   }
 });
 
 },{"./HouseItemView":13,"./HouseView":14,"backbone":1,"lodash":4}],16:[function(require,module,exports){
-//temp Note: seems to be done
-
 'use strict';
 
 var Backbone = require('backbone');
@@ -30286,7 +30265,6 @@ module.exports = Backbone.View.extend({
     vent.trigger('addHome:selected', { path: path });
   }
 });
-
 },{"../events/Vent":7,"backbone":1}],17:[function(require,module,exports){
 'use strict';
 
@@ -30307,7 +30285,7 @@ var ResultsView = Backbone.View.extend({
       this.resultsView.remove();
     }
 
-	this.resultsView = new HousesView({ collection: this.collection }); //how does it know which collection that is????? when is the collection assigned/served?
+	this.resultsView = new HousesView({ collection: this.collection });
     this.$el.append(this.resultsView.render().el);
 	
   },
@@ -30325,12 +30303,10 @@ var ResultsView = Backbone.View.extend({
 	if (this.resultsView) {
       this.resultsView.remove();
     }
-    console.log('not yet implemented');
 	this.resultsView = new AddHouseView();
 	this.$el.append(this.resultsView.render().el);
   },	 
   showHome: function () {
-	console.log(this.resultsView);
     if (this.resultsView) {
       this.resultsView.remove();
     }

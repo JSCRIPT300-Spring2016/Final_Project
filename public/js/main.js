@@ -1,8 +1,6 @@
-//temp note: seems to be done
 'use strict';
 
 var $ = require('jquery');
-
 
 $(function () {
 

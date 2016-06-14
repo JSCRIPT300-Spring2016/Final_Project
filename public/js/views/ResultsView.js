@@ -17,7 +17,7 @@ var ResultsView = Backbone.View.extend({
       this.resultsView.remove();
     }
 
-	this.resultsView = new HousesView({ collection: this.collection }); //how does it know which collection that is????? when is the collection assigned/served?
+	this.resultsView = new HousesView({ collection: this.collection });
     this.$el.append(this.resultsView.render().el);
 	
   },
@@ -35,12 +35,10 @@ var ResultsView = Backbone.View.extend({
 	if (this.resultsView) {
       this.resultsView.remove();
     }
-    console.log('not yet implemented');
 	this.resultsView = new AddHouseView();
 	this.$el.append(this.resultsView.render().el);
   },	 
   showHome: function () {
-	console.log(this.resultsView);
     if (this.resultsView) {
       this.resultsView.remove();
     }

@@ -1,5 +1,3 @@
-//temp Note: seems to be done
-
 'use strict';
 
 var Backbone = require('backbone');

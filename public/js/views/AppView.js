@@ -1,5 +1,3 @@
-//temp notes: mostly done
-
 'use strict';
 
 var Backbone = require('backbone');
@@ -10,14 +8,14 @@ var vent = require('../events/Vent');
 
 module.exports = Backbone.View.extend({ 
   events: {
-    '#home': 'showHome'
+    'click #home': 'showHome'
   },
   
   initialize: function () {
     var navView = new NavView({ el: '#choices' });
-    var navigationEvents = ['allHouses', 'house', 'home', 'addHome']; //all the navigation events possible in the navigation?
+    var navigationEvents = ['allHouses', 'house', 'home', 'addHome'];
 
-    this.appRouter = new AppRouter({ appController: appController }); //we send the appController to the router
+    this.appRouter = new AppRouter({ appController: appController });
 
     this.navigateSelected = this.navigateSelected.bind(this);
     navigationEvents.forEach(function (event) {

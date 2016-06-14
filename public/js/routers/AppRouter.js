@@ -1,5 +1,3 @@
-//temp Notes: some open questions here
-
 'use strict';
 var Backbone = require('backbone');
 
@@ -11,9 +9,9 @@ var Router = Backbone.Router.extend({
 	'addHouse': 'showHouseForm',
 	'deleteHouse': 'deleteHouse'
   },
-  //this I am not clear about
+
   initialize: function (options) {
-    options || {};//don't quite understand this code
+    options || {};
     this.appController = options.appController;
   },
   showHome: function () {
@@ -24,13 +22,14 @@ var Router = Backbone.Router.extend({
   },
   showHouseForm: function(){
 	console.log('no add form yet: under construction');
+	this.appController.showAddForm();
   },	
   showHouse: function (id) {
     this.appController.showHouse({ id: id });
   },
   
   deleteHouse:function (id) {
-    this.appController.deleteHouse({ id: id});
+    this.appController.deleteHouse({ id: id });
   }
 
 });

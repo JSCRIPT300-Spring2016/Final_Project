@@ -12,4 +12,8 @@ module.exports = Backbone.View.extend({
 
     return this;
   },  
+  
+  remove: function () {
+    Backbone.View.prototype.remove.call(this);
+  }
 });

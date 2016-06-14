@@ -1,19 +1,17 @@
-//general controller for the Results View: the area that changes throughout depending on events
-
 'use strict';
 
 var ResultsView = require('../views/ResultsView');
 var Houses = require('../collections/Houses');
 var vent = require('../events/Vent');
 
-var houses = new Houses(); //instance of the house collection
+var houses = new Houses();
 var resultsView = new ResultsView({ el: '#results', collection: houses });
-var jqxhr = houses.fetch(); //a jquery 'promise' object ; yeah! found the fetch command!
+var jqxhr = houses.fetch();
 
 //Events to listen to:
 vent.on('allHouses:selected', showAllHouses);
 vent.on('addHome:selected', showAddForm);
-vent.on('house:selected', showHouse); //I made it a class; hahaha!
+vent.on('house:selected', showHouse);
 vent.on('home:selected', showHome);
 vent.on('deleteHouse:selected', deleteHouse);
 
@@ -30,7 +28,8 @@ function showAllHouses() {
   });
 }
 
-function showHouse(options) {
+//change to id as it's the id that is handed in in router
+function showHouse(options) {         //options: how do I know what gets handed in?
 	var model = options.model;
   jqxhr.done(function () {
 	//console.log("id ", model.id);

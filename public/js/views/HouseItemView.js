@@ -1,5 +1,3 @@
-//pretty much done: might have to add the template in here
-
 'use strict';
 
 var _ = require('lodash');
@@ -13,11 +11,10 @@ module.exports = Backbone.View.extend({
 
   events: {
     'click a': 'handleClick',
-	'click button': 'handleButtonClick'
+	'click .deleteHouse': 'handleButtonClick'
   },
   render: function () {
     var data = _.extend(this.model.attributes, this.model.id);
-	console.log("the data " + data);
     this.$el.append(this.template(data));
 	
     return this;
