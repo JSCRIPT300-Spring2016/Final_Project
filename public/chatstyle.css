@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 14px pixelFont;
+}
+
+form {
+    padding: 3px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ece9d6; /* tan*/
+}
+
+    form input {
+        border: 0;
+        padding: 10px;
+        width: 232px;
+        font: 14px pixelFont;
+    }
+
+    form #button {
+        color: #FFF;
+        background: #2D9F0B;
+        border: none;
+        padding: 10px;
+        width: 50px;
+    }
+
+    a{
+        color:#1c5fe9;
+    }
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+    #messages li {
+        padding: 5px 10px;
+    }
+
+        #messages li:nth-child(odd) {
+            background: #eee;
+        }
+
+#notifyUser {
+    position: fixed;
+    bottom: 42px;
+    width: 100%;
+}
+
+.backgroundImageStyle{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    background-image: url('bg.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+
+.titleBarStyle {
+    width: 295px;
+    background-color: #1c5fe9; /* blue */
+    margin-top: -1px;
+    margin-left: -1px;
+    padding:2px;
+    color:white;
+    line-height: 22px;
+    vertical-align:central;
+}
+
+.cardStyle {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background-color: #ece9d6; /* tan*/
+    border-style: solid;
+    border-color: #1c5fe9; /* blue */
+    border-width: 5px;
+    box-shadow: rgba(0,0,0,.4) 2px 2px;
+    transition:all linear 167ms;
+    visibility:hidden;
+}
+
+.renderHerePleaseStyle{
+    height:30px;
+    line-height:30px;
+    text-align:left;
+    padding-left: 8px;
+    padding-top: 2px;
+    border-bottom: 1px outset gray;
+    background-color:#f6f4be; /* yellow */
+}
+
+.menuBarStyle{
+    padding:3px;
+    padding-top:5px;
+    border-bottom: 1px dotted gray;
+}
+
+.menuButtonStyle{
+    display:inline-block;
+    padding-left: 5px;
+    vertical-align:sub;
+}
+
+.iconStyle{
+    vertical-align:sub;
+}
+
+.headerStyle{
+    position:absolute;
+    top:60px;
+    left:265px;
+}
+
+.messageContainerStyle{
+    height:248px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    background-color:white;
+}
+
+.notifyUserStyle{
+    font-size: 10px;
+    color:darkgray;
+    padding-left:5px;
+}
+
+.bootScreenStyle{
+    width:100%;
+    height:100%;
+    background-color: black;
+    background-image: url('winxp.gif');
+    background-position: center center;
+    background-repeat:no-repeat;
+    position:absolute;
+}
+
+@font-face {
+    font-family: pixelFont;
+    src: url('minecraft.ttf');
+}
+

@@ -1,0 +1,26 @@
+{
+  "name": "final_project_sam_radakovitz",
+  "version": "1.0.0",
+  "description": "Week 5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samradakovitz/Final_Project.git"
+  },
+  "author": "sam radakovitz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samradakovitz/Final_Project/issues"
+  },
+  "homepage": "https://github.com/samradakovitz/Final_Project#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "socket.io": "^1.4.6",
+    "underscore": "^1.8.3"
+  }
+}
