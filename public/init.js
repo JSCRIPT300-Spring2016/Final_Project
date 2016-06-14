@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 //resize
 handleResize();
 
@@ -7,34 +9,34 @@ audio.play();
 
 //hide the boot screen
 window.setTimeout(function(){
-    bootScreen.style.display = "none";
-}, 1500)
+  bootScreen.style.display = 'none';
+}, 1500);
 
 //show the chat window
 window.setTimeout(function () {
-    card.style.visibility = "visible";
+  card.style.visibility = 'visible';
 
     //play welcome
-    var audioWelcome = new Audio('welcome.mp3');
-    audioWelcome.play();
-}, 3500)
+  var audioWelcome = new Audio('welcome.mp3');
+  audioWelcome.play();
+}, 3500);
 
 //add resize event
-window.addEventListener("resize", handleResize);
+window.addEventListener('resize', handleResize);
 
 function handleResize() {
 
     //set top and left of card
-    card.style.left = ((window.innerWidth - card.offsetWidth) / 2) + "px";
-    card.style.top = ((window.innerHeight - card.offsetHeight) / 2) + "px";
+  card.style.left = ((window.innerWidth - card.offsetWidth) / 2) + 'px';
+  card.style.top = ((window.innerHeight - card.offsetHeight) / 2) + 'px';
 
     //buffer some space on the edges and calculate scale
-    var ww = window.innerWidth - (window.innerWidth * .3);
-    var wh = window.innerHeight - (window.innerHeight * .3);
+  var ww = window.innerWidth - (window.innerWidth * .3);
+  var wh = window.innerHeight - (window.innerHeight * .3);
 
     //scale the card
-    scale = Math.min(ww / card.offsetWidth, wh / card.offsetHeight);
+  scale = Math.min(ww / card.offsetWidth, wh / card.offsetHeight);
 
     //set the scale
-    $('#card').css({ '-webkit-transform': 'scale(' + scale + ')' });
+  $('#card').css({ '-webkit-transform': 'scale(' + scale + ')' });
 }

@@ -1,3 +1,5 @@
+/*eslint-env node*/
+/* eslint-disable no-unused-vars */
 var express = require('express');
 var router = express.Router();
 var app = express();
@@ -6,7 +8,7 @@ var path = require('path');
 
 router.route('/')
   .get(function (request, response) {
-      response.sendFile(path.resolve(__dirname + '/../public/index.html'));
+    response.sendFile(path.resolve(__dirname + '/../public/index.html'));
   });
 
 //router.route('/:id')

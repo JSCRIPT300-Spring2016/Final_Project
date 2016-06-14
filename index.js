@@ -1,3 +1,4 @@
+/*eslint-env node*/
 var express = require('express');
 
 var app = require('express')();
@@ -20,18 +21,19 @@ app.use(catchRoute(path.resolve(root, 'error.html')));
 
 //Chat Stuff
 io.on('connection', function (socket) {
-    socket.on('chatMessage', function (from, msg, color) {
-        io.emit('chatMessage', from, msg, color);
-    });
-    socket.on('notifyUser', function (user) {
-        io.emit('notifyUser', user);
-    });
-    socket.on('disconnect', function () {
-        io.emit('chatMessage', "System", "Someone Left", "black");
-    })
+  socket.on('chatMessage', function (from, msg, color) {
+    io.emit('chatMessage', from, msg, color);
+  });
+  socket.on('notifyUser', function (user) {
+    io.emit('notifyUser', user);
+  });
+  socket.on('disconnect', function () {
+    io.emit('chatMessage', 'System', 'Someone Left', 'black');
+  });
 });
 
 //Listen Stuff
 http.listen(port, function () {
-    console.log('listening on port', port);
+  /* eslint-disable no-console */
+  console.log('listening on port', port);
 });

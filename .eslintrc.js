@@ -23,10 +23,6 @@ module.exports = {
             "error",
             "always"
         ],
-        "no-undef": [
-            "error",
-            { "typeof": true }
-        ],
         "jsx-quotes": [
             "error",
             "prefer-single"
@@ -35,17 +31,8 @@ module.exports = {
             "error",
             "never"
         ],
-        "max-len": ["error",
-            80,
-            2,
-            { "ignoreUrls": true }
-        ],
         "newline-before-return": [
             "error"
-        ],
-        "eqeqeq": [
-            "error",
-            "smart"
         ]
     }
 };
