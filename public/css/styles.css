@@ -1,0 +1,138 @@
+html {
+  font-size: 10px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+.pageHeading {
+  width: ;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+.pageHeading__word {
+  display: block;
+  font-size: 3rem;
+  font-family: Verdana, sans-serif;
+  color: #bf0000;
+  line-height: 1.4;
+  letter-spacing: 1.8rem;
+}
+form {
+  text-align: center;
+  width: 450px;
+  margin: 0 auto 20px auto;
+}
+#submitBtn {
+  width: 60px;
+  height: 30px;
+  background: #5FCF80;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+h2 {
+  text-align: center;
+}
+.form_input input[type=text] {
+  width: 85%;
+  max-width: 500px;
+  border: 1px solid #41b3d5;
+  border-radius: 8px;
+  height: 3em;
+  margin-bottom: 1em;
+}
+.container {
+  padding: 0 15px;
+}
+.todoNav__list {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+.todoNav__item {
+  display: block;
+  padding: 0;
+  margin: 10px 0;
+}
+.navLink {
+  display: inline-block;
+  width: 100%;
+  min-width: 118px;
+  font-size: 1.6rem;
+  color: #f7f7f7;
+  text-decoration: none;
+  background-color: #117a99;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+}
+.navLink:hover {
+  background-color: #41b3d5;
+  cursor: pointer;
+}
+.navLink:active,
+.navLink:focus {
+  outline: none;
+}
+.results {
+  max-width: 480px;
+  margin: 0 auto;
+}
+.listHeading {
+  font-size: 2rem;
+  color: #384047;
+}
+.trucksList,
+.foodTypesList,
+.detailList {
+  list-style-type: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #555;
+  padding: 0;
+}
+.todosList {
+  list-style-type: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #555;
+  padding: 0;
+}
+.deleteBtn {
+  width: 25px;
+}
+.todoName {
+  margin-left: 10px;
+}
+.todosList__item {
+  background-color: #e0f3f8;
+  padding: 10px 15px;
+  min-width: 240px;
+  margin: 0 0 5px 0;
+  cursor: pointer;
+  font-size: 2em;
+}
+.taskList {
+  list-style-type: none;
+}
+@media screen and (min-width: 437px) {
+  .pageHeading__word {
+    display: inline-block;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 496px) {
+  .todoNav {
+    width: 450px;
+    margin: 0 auto;
+  }
+  .todoNav__item {
+    display: inline-block;
+    min-width: 140px;
+    width: auto;
+    margin-right: 8px;
+  }
+}
