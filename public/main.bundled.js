@@ -13309,24 +13309,6 @@ var plants = require('../plants');
 var header = new Header();
 var formView = new FormView();
 
-// changed from being an exports module
-// function showHome() {
-//   console.log('you should see the header');
-//   header.render();
-//   formView.render();
-// };
-//
-// function showHome() {
-//   var that = this;
-//   var plantCollection = new PlantListCollection();
-//   plantCollection.reset(plants);
-//   _(plantCollection.models).each(function(plant) {
-//     var view = new PlantListView({ model: plant });
-//     $('#list-of-plants').append(view.render().el);
-//   });
-// }
-
-
 module.exports = {
 showHome: function() {
   console.log('you should see the header');
@@ -13506,10 +13488,9 @@ module.exports = Backbone.Router.extend({
   noMatch: function(){
     console.log('no matching url');
   },
-  home: function(e) {
-    e.preventDefault();
+  home: function() {
     console.log('a new route!');
-    //this should be reinserted once things are working
+    //this should be working but isn't
     this.mainController.allPlants();
   }
 });
@@ -13543,34 +13524,25 @@ module.exports = Backbone.View.extend({
     // pushState: true,
     // something is wrong with hash redirects
     // need prevent default: http://stackoverflow.com/questions/28323836/backbone-js-pushstate-true
+    // help here? http://slides.com/kinakuta/deck-17?token=vY03XdtR#/8
+    // may need vent
 
     Backbone.history.start({ hashChange: false, root: '/' });
   }
 });
 
 },{"../controllers/mainController":5,"../routers/mainRouter":9,"backbone":1}],12:[function(require,module,exports){
-// var Header = Backbone.View.extend({
-//   // el: '#header',
-//   initialize: function(){
-//     this.render();
-//   },
-//   render: function(){
-//     $(this.el).html('<h1 class="header">Plan n\' Plant App</h1><h4 class="subheading">Organizing Your Oregano</h4>');
-//   }
-// });
-//
-// // var header = new Header();
- var Backbone = require('backbone');
+var Backbone = require('backbone');
 
- module.exports = Backbone.View.extend({
-   el: '#header',
-  //  template: TFT.header,
-   render: function() {
-    //  this.$el.append(this.template());
-    $(this.el).html('<h1 class="header">Plan n\' Plant App</h1><h4 class="subheading">Organizing Your Oregano</h4>');
-     return this;
-   }
- })
+module.exports = Backbone.View.extend({
+ el: '#header',
+ template: TFT.header,
+ render: function() {
+   this.$el.append(this.template());
+  // $(this.el).html('<h1 class="header">Plan n\' Plant App</h1><h4 class="subheading">Organizing Your Oregano</h4>');
+   return this;
+ }
+});
 
 },{"backbone":1}],13:[function(require,module,exports){
 var Backbone = require('backbone');
