@@ -6,14 +6,14 @@ var AppRouter = require('../routers/AppRouter');
 var appController = require('../controllers/AppController');
 var vent = require('../events/Vent');
 
-module.exports = Backbone.View.extend({ 
+module.exports = Backbone.View.extend({
   events: {
     'click #home': 'showHome'
   },
-  
   initialize: function () {
     var navView = new NavView({ el: '#choices' });
-    var navigationEvents = ['allHouses', 'house', 'home', 'addHome'];
+    var navigationEvents = ['allHouses', 'house', 'home',
+      'addHome', 'deleteHouse'];
 
     this.appRouter = new AppRouter({ appController: appController });
 

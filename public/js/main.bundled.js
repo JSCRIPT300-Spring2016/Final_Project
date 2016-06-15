@@ -29922,20 +29922,16 @@ return jQuery;
 },{}],5:[function(require,module,exports){
 'use strict';
 
-var _ = require('lodash');
 var Backbone = require('backbone');
 var House = require('../models/House');
 
 var Houses = Backbone.Collection.extend({
   model: House,
-  url: '/api/houses',
-  
-  //methods go here:
-
+  url: '/api/houses'
 });
 
 module.exports = Houses;
-},{"../models/House":9,"backbone":1,"lodash":4}],6:[function(require,module,exports){
+},{"../models/House":9,"backbone":1}],6:[function(require,module,exports){
 'use strict';
 
 var ResultsView = require('../views/ResultsView');
@@ -29967,12 +29963,12 @@ function showAllHouses() {
 }
 
 //change to id as it's the id that is handed in in router
-function showHouse(options) {         //options: how do I know what gets handed in?
-	var model = options.model;
+function showHouse(options) {
+  var model = options.model;
   jqxhr.done(function () {
-	//console.log("id ", model.id);
+    //console.log("id ", model.id);
     model = houses.findWhere({ _id: model.id });
-	//console.log("find where model ", model);
+    //console.log("find where model ", model);
     resultsView.showHouse(model);
   });
 }
@@ -29983,7 +29979,7 @@ function deleteHouse(options) {
   jqxhr.done(function () {
     model = houses.findWhere({ _id: model.id });
 	//removes it from client collection only
-	houses.remove(model);
+    houses.remove(model);
 	
 	//removes it from server
 	//model.destroy();
@@ -29994,7 +29990,7 @@ function deleteHouse(options) {
 function showAddForm() {
   jqxhr.done(function () {
     resultsView.showAddForm();
-  })
+  });
 }
 
 module.exports = {
@@ -30010,7 +30006,7 @@ module.exports = {
 var _ = require('lodash');
 var Backbone = require('backbone');
 
-module.exports = _.extend({}, Backbone.Events); //what does this do exactly?
+module.exports = _.extend({}, Backbone.Events);
 
 },{"backbone":1,"lodash":4}],8:[function(require,module,exports){
 'use strict';
@@ -30019,8 +30015,10 @@ var $ = require('jquery');
 
 $(function () {
 
-  var AppView = require('./views/AppView'); //AppView: top level component
-  var app = new AppView({ el: 'body' }); //it's in charge of the body (therefore pretty much all of it)
+  var AppView = require('./views/AppView');
+  /*eslint-disable no-unused-vars*/
+  var app = new AppView({ el: 'body' });
+  /*eslint-enable no-unused-vars*/
 });
 },{"./views/AppView":12,"jquery":3}],9:[function(require,module,exports){
 'use strict';
@@ -30029,51 +30027,50 @@ var Backbone = require('backbone');
 
 var House = Backbone.Model.extend({
   idAttribute: '_id',
-  urlRoot: '/api/houses',	
+  urlRoot: '/api/houses',
 	// Default attributes for the House Model
   defaults: {
-		street: '',
-		city: '',
-		zipCode: 11111,
-		state: '',
-		country: '',
-		sellingAgent: '',
-		contactEmail: '',
-		contactPhone: '',
-		type: '',
-		yearBuilt: 1111,  
-		price: '0',
-		HMO: 0,
-		nrBedrooms: 0,
-		nrBathrooms: 0,
-		nrLevels: 0,
-		nrFireplaces: 0,
-		finishedBasement: 'no',  
-		schoolDistrict: '',
-		openHouse: [],
-		putOnMarket: '',
-		daysOnMarket: 0,
-		description: ''
-    }
+    street: '',
+    city: '',
+    zipCode: 11111,
+    state: '',
+    country: '',
+    sellingAgent: '',
+    contactEmail: '',
+    contactPhone: '',
+    type: '',
+    yearBuilt: 1111,
+    price: '0',
+    HMO: 0,
+    nrBedrooms: 0,
+    nrBathrooms: 0,
+    nrLevels: 0,
+    nrFireplaces: 0,
+    finishedBasement: 'no',
+    schoolDistrict: '',
+    openHouse: [],
+    putOnMarket: '',
+    daysOnMarket: 0,
+    description: ''
+  }
 });
 
 module.exports = House;
-
 },{"backbone":1}],10:[function(require,module,exports){
 'use strict';
+
 var Backbone = require('backbone');
 
-var Router = Backbone.Router.extend({
+module.exports = Backbone.Router.extend({
   routes: {
     '': 'showHome',
     'houses': 'showAllHouses',
     'houses/:id': 'showHouse',
-	'addHouse': 'showHouseForm',
-	'deleteHouse': 'deleteHouse'
+    'addHouse': 'showHouseForm',
+    'deleteHouse': 'deleteHouse'
   },
-
   initialize: function (options) {
-    options || {};//don't quite understand this code
+    options || {};
     this.appController = options.appController;
   },
   showHome: function () {
@@ -30083,9 +30080,8 @@ var Router = Backbone.Router.extend({
     this.appController.showAllHouses();
   },
   showHouseForm: function(){
-	console.log('no add form yet: under construction');
-	this.appController.showAddForm();
-  },	
+    this.appController.showAddForm();
+  },
   showHouse: function (id) {
     this.appController.showHouse({ id: id });
   },
@@ -30095,32 +30091,28 @@ var Router = Backbone.Router.extend({
   }
 
 });
-
-module.exports = Router;
 },{"backbone":1}],11:[function(require,module,exports){
 'use strict';
 
 var Backbone = require('backbone');
-var _= require('lodash');
-
 
 module.exports = Backbone.View.extend({
   className: 'addHouseForm',
+  /*global TFT:true*/
+  /*eslint no-undef: "error"*/
   template: TFT.addHouse,
   
   render: function () {
     this.$el.append(this.template());
+	
     return this;
   },
     
   remove: function () {
-    Backbone.View.prototype.remove.call(this); //no idea what this does; looks super fancy though
+    Backbone.View.prototype.remove.call(this);
   }
 });
-
-},{"backbone":1,"lodash":4}],12:[function(require,module,exports){
-//temp notes: mostly done
-
+},{"backbone":1}],12:[function(require,module,exports){
 'use strict';
 
 var Backbone = require('backbone');
@@ -30129,14 +30121,14 @@ var AppRouter = require('../routers/AppRouter');
 var appController = require('../controllers/AppController');
 var vent = require('../events/Vent');
 
-module.exports = Backbone.View.extend({ 
+module.exports = Backbone.View.extend({
   events: {
     'click #home': 'showHome'
   },
-  
   initialize: function () {
     var navView = new NavView({ el: '#choices' });
-    var navigationEvents = ['allHouses', 'house', 'home', 'addHome'];
+    var navigationEvents = ['allHouses', 'house', 'home',
+      'addHome', 'deleteHouse'];
 
     this.appRouter = new AppRouter({ appController: appController });
 
@@ -30166,11 +30158,13 @@ var vent = require('../events/Vent');
 module.exports = Backbone.View.extend({
   tagName: 'li',
   className: 'houseList__item',
+  /*global TFT:true*/
+  /*eslint no-undef: "error"*/
   template: TFT.HouseListItem,
 
   events: {
     'click a': 'handleClick',
-	'click .deleteHouse': 'handleButtonClick'
+    'click .deleteHouse': 'handleButtonClick'
   },
   render: function () {
     var data = _.extend(this.model.attributes, this.model.id);
@@ -30186,50 +30180,53 @@ module.exports = Backbone.View.extend({
   handleButtonClick: function (ev) {
     ev.preventDefault();
     vent.trigger('deleteHouse:selected', { model: this.model });
-  }   
+  }
 });
 },{"../events/Vent":7,"backbone":1,"lodash":4}],14:[function(require,module,exports){
 'use strict';
 
 var Backbone = require('backbone');
-var _= require('lodash');
+//var _= require('lodash');
 
 module.exports = Backbone.View.extend({
   className: 'detailList',
-  template: TFT.singleHouse, 
-
+  /*global TFT:true*/
+  /*eslint no-undef: "error"*/
+  template: TFT.singleHouse,
   render: function () {
     this.$el.append(this.template(this.model.toJSON()));
 
     return this;
-  },  
+  },
   
   remove: function () {
     Backbone.View.prototype.remove.call(this);
   }
 });
-},{"backbone":1,"lodash":4}],15:[function(require,module,exports){
+},{"backbone":1}],15:[function(require,module,exports){
 'use strict';
 
 var Backbone = require('backbone');
-var _= require('lodash');
+//var _= require('lodash');
 var HouseItemView = require('./HouseItemView');
-var HouseView = require('./HouseView');
+//var HouseView = require('./HouseView');
 
 module.exports = Backbone.View.extend({
   className: 'allHousesList',
   id: 'dynamicHouseList',
+  /*global TFT:true*/
+  /*eslint no-undef: "error"*/
   template: TFT.allHouses,
   _children: [],
   
   render: function () {
     this.$el.append(this.template());
 
-    this.collection.each(function (model) { 
+    this.collection.each(function (model) {
       var itemView = new HouseItemView({ model: model });
-	  
+
       this._children.push(itemView);
-	  this.$('.housesList').append(itemView.render().el); //housesList is the class named in the template
+      this.$('.housesList').append(itemView.render().el);
     }, this);
 
     return this;
@@ -30243,7 +30240,7 @@ module.exports = Backbone.View.extend({
   }
 });
 
-},{"./HouseItemView":13,"./HouseView":14,"backbone":1,"lodash":4}],16:[function(require,module,exports){
+},{"./HouseItemView":13,"backbone":1}],16:[function(require,module,exports){
 'use strict';
 
 var Backbone = require('backbone');
@@ -30271,21 +30268,21 @@ module.exports = Backbone.View.extend({
 var Backbone = require('backbone');
 var HousesView = require('./HousesView');
 var HouseView = require('./HouseView');
-var HouseItemView = require('./HouseItemView');
+//var HouseItemView = require('./HouseItemView');
 var AddHouseView = require('./AddHouseView');
-var Houses = require('../collections/Houses');
+//var Houses = require('../collections/Houses');
 
 
 var ResultsView = Backbone.View.extend({
   initialize: function () {
-	this.showHome();
+    this.showHome();
   },
   showAllHouses: function () {
     if (this.resultsView) {
       this.resultsView.remove();
     }
 
-	this.resultsView = new HousesView({ collection: this.collection });
+    this.resultsView = new HousesView({ collection: this.collection });
     this.$el.append(this.resultsView.render().el);
 	
   },
@@ -30298,14 +30295,14 @@ var ResultsView = Backbone.View.extend({
       this.resultsView = new HouseView({ model: model });
       this.$el.append(this.resultsView.render().el);
     }
-  }, 
+  },
   showAddForm: function() {
-	if (this.resultsView) {
+    if (this.resultsView) {
       this.resultsView.remove();
     }
-	this.resultsView = new AddHouseView();
-	this.$el.append(this.resultsView.render().el);
-  },	 
+    this.resultsView = new AddHouseView();
+    this.$el.append(this.resultsView.render().el);
+  },
   showHome: function () {
     if (this.resultsView) {
       this.resultsView.remove();
@@ -30314,4 +30311,4 @@ var ResultsView = Backbone.View.extend({
 });
 
 module.exports = ResultsView;
-},{"../collections/Houses":5,"./AddHouseView":11,"./HouseItemView":13,"./HouseView":14,"./HousesView":15,"backbone":1}]},{},[8]);
+},{"./AddHouseView":11,"./HouseView":14,"./HousesView":15,"backbone":1}]},{},[8]);

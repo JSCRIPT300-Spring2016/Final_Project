@@ -1,15 +1,15 @@
 'use strict';
+
 var Backbone = require('backbone');
 
-var Router = Backbone.Router.extend({
+module.exports = Backbone.Router.extend({
   routes: {
     '': 'showHome',
     'houses': 'showAllHouses',
     'houses/:id': 'showHouse',
-	'addHouse': 'showHouseForm',
-	'deleteHouse': 'deleteHouse'
+    'addHouse': 'showHouseForm',
+    'deleteHouse': 'deleteHouse'
   },
-
   initialize: function (options) {
     options || {};
     this.appController = options.appController;
@@ -21,9 +21,8 @@ var Router = Backbone.Router.extend({
     this.appController.showAllHouses();
   },
   showHouseForm: function(){
-	console.log('no add form yet: under construction');
-	this.appController.showAddForm();
-  },	
+    this.appController.showAddForm();
+  },
   showHouse: function (id) {
     this.appController.showHouse({ id: id });
   },
@@ -33,5 +32,3 @@ var Router = Backbone.Router.extend({
   }
 
 });
-
-module.exports = Router;

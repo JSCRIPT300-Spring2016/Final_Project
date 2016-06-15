@@ -97,11 +97,9 @@ li a:hover:not(.active) {
     background-color: #4CAF50;
 }
 
-
 .navigation{
 
 }
-
 
 * {
   box-sizing: border-box;
@@ -111,7 +109,6 @@ li a:hover:not(.active) {
   font-size: 2em;
   color: darkgreen;
 }
-
 
 .detailList {
   list-style-type: none;
@@ -146,72 +143,4 @@ li a:hover:not(.active) {
 
 .addHouseForm{
 
-}
-
-
-
-
-
-
-
-
-
-
-form {
-  background: #e7e7e7;
-  padding: 10px;
-}
-
-fieldset {
-  padding-top: 10px;
-  margin-bottom: 10px;
-}
-
-.form_input {
-  margin-bottom: 10px;
-}
-
-textarea {
-  resize: none;
-}
-
-input[type=text],
-textarea {
-  font-size: 14px;
-  padding: 8px;
-  border: none;
-}
-
-input[type=submit],
-button[type=button] {
-  display: inline-block;
-  color: #666;
-  font-size: 14px;
-  padding: 8px 10px;
-  margin: 10px 0 0 5px;
-  background: aquamarine;
-  border: none;
-  border-radius: 3px;
-}
-
-input[name=website],
-input[name=Facebook],
-input[name=Twitter] {
-  display: inline-block;
-  width: 400px;
-}
-
-
-.delete_link {
-  display: inline-block;
-  background: pink;
-  padding: 2px 5px;
-  border: 1px solid grey;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.delete_link:hover {
-  background: red;
-  font-weight: bold;
 }

@@ -4,6 +4,8 @@ var $ = require('jquery');
 
 $(function () {
 
-  var AppView = require('./views/AppView'); //AppView: top level component
-  var app = new AppView({ el: 'body' }); //it's in charge of the body (therefore pretty much all of it)
+  var AppView = require('./views/AppView');
+  /*eslint-disable no-unused-vars*/
+  var app = new AppView({ el: 'body' });
+  /*eslint-enable no-unused-vars*/
 });

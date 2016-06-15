@@ -7,11 +7,13 @@ var vent = require('../events/Vent');
 module.exports = Backbone.View.extend({
   tagName: 'li',
   className: 'houseList__item',
+  /*global TFT:true*/
+  /*eslint no-undef: "error"*/
   template: TFT.HouseListItem,
 
   events: {
     'click a': 'handleClick',
-	'click .deleteHouse': 'handleButtonClick'
+    'click .deleteHouse': 'handleButtonClick'
   },
   render: function () {
     var data = _.extend(this.model.attributes, this.model.id);
@@ -27,5 +29,5 @@ module.exports = Backbone.View.extend({
   handleButtonClick: function (ev) {
     ev.preventDefault();
     vent.trigger('deleteHouse:selected', { model: this.model });
-  }   
+  }
 });

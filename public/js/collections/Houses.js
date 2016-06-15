@@ -1,15 +1,11 @@
 'use strict';
 
-var _ = require('lodash');
 var Backbone = require('backbone');
 var House = require('../models/House');
 
 var Houses = Backbone.Collection.extend({
   model: House,
-  url: '/api/houses',
-  
-  //methods go here:
-
+  url: '/api/houses'
 });
 
 module.exports = Houses;

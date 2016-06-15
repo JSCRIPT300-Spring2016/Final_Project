@@ -29,12 +29,12 @@ function showAllHouses() {
 }
 
 //change to id as it's the id that is handed in in router
-function showHouse(options) {         //options: how do I know what gets handed in?
-	var model = options.model;
+function showHouse(options) {
+  var model = options.model;
   jqxhr.done(function () {
-	//console.log("id ", model.id);
+    //console.log("id ", model.id);
     model = houses.findWhere({ _id: model.id });
-	//console.log("find where model ", model);
+    //console.log("find where model ", model);
     resultsView.showHouse(model);
   });
 }
@@ -45,7 +45,7 @@ function deleteHouse(options) {
   jqxhr.done(function () {
     model = houses.findWhere({ _id: model.id });
 	//removes it from client collection only
-	houses.remove(model);
+    houses.remove(model);
 	
 	//removes it from server
 	//model.destroy();
@@ -56,7 +56,7 @@ function deleteHouse(options) {
 function showAddForm() {
   jqxhr.done(function () {
     resultsView.showAddForm();
-  })
+  });
 }
 
 module.exports = {
