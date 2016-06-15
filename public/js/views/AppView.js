@@ -11,7 +11,9 @@ module.exports = Backbone.View.extend({
     'click #home': 'showHome'
   },
   initialize: function () {
+    /*eslint-disable no-unused-vars*/
     var navView = new NavView({ el: '#choices' });
+    /*eslint-enable no-unused-vars*/
     var navigationEvents = ['allHouses', 'house', 'home',
       'addHome', 'deleteHouse'];
 
