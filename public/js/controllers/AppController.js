@@ -34,9 +34,9 @@ function showIdea(options) {
   var model = options.model;
 
   jqxhr.done(function() {
-    if (options.name) {
+    if (options.ideaName) {
       model = ideas.findWhere({
-        name: options.name
+        ideaName: options.ideaName
       });
     }
     resultsView.showIdea(model);
