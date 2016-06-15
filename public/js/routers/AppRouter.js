@@ -25,7 +25,7 @@ module.exports = Backbone.Router.extend({
   showAllRankings: function () {
     this.appController.showAllRankings();
   },
-  showIdeasByRanking: function (ranking) {
-    this.appController.showIdeasByRanking({ ranking: ranking });
+  showIdeasByRank: function (ranking) {
+    this.appController.showIdeasByRank({ ranking: ranking });
   }
 });
