@@ -7,7 +7,7 @@ module.exports = Backbone.Router.extend({
     'ideas': 'showAllIdeas',
     'ideas/:ideaName': 'showIdea', // changed from name to ideaName
     'idea_ranking': 'showAllRankings',
-    'idea_ranking/:ranking': 'showIdeasByRanking'
+    'idea_ranking/:ranking': 'showIdeasByRank'
   },
   initialize: function (options) {
     options || {};

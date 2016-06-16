@@ -36,7 +36,7 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<a class="ideaLink" href="/ideas/' +
-((__t = ( name )) == null ? '' : __t) +
+((__t = ( ideaName )) == null ? '' : __t) +
 '">\n  <h2 class="detailHeading">Idea Name: ' +
 ((__t = ( ideaName )) == null ? '' : __t) +
 '</h2>\n  <h2 class="detailHeading">Author Name: ' +

@@ -29757,9 +29757,9 @@ function showIdea(options) {
   var model = options.model;
 
   jqxhr.done(function() {
-    if (options.name) {
+    if (options.ideaName) {
       model = ideas.findWhere({
-        name: options.name
+        ideaName: options.ideaName
       });
     }
     resultsView.showIdea(model);
@@ -29830,7 +29830,7 @@ module.exports = Backbone.Router.extend({
   routes: {
     '': 'home',
     'ideas': 'showAllIdeas',
-    'ideas/:name': 'showIdea',
+    'ideas/:ideaName': 'showIdea', // changed from name to ideaName
     'idea_ranking': 'showAllRankings',
     'idea_ranking/:ranking': 'showIdeasByRanking'
   },
@@ -29844,14 +29844,14 @@ module.exports = Backbone.Router.extend({
   showAllIdeas: function () {
     this.appController.showAllIdeas();
   },
-  showIdea: function (name) {
-    this.appController.showIdea({ name: name });
+  showIdea: function (ideaName) { // changed name to ideaName
+    this.appController.showIdea({ ideaName: ideaName });
   },
   showAllRankings: function () {
     this.appController.showAllRankings();
   },
-  showIdeasByRanking: function (ranking) {
-    this.appController.showIdeasByRanking({ ranking: ranking });
+  showIdeasByRank: function (ranking) {
+    this.appController.showIdeasByRank({ ranking: ranking });
   }
 });
 
