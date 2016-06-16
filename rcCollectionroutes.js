@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 var urlEncoded = bodyParser.urlencoded({ extended: false });
 
-var rcRecord = require('../models/rcRecordmodel');
+var rcCollection = require('../models/rcCollectionmodel');
 
 var router = express.Router();
 
@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 router.route('/')
   .get(function(request, response){  
-  rcRecord.find('input', function(error, results){
+  rcCollection.find(function(error, results){
     if(error){
       response.status(500).send(error);
     }else{
@@ -22,9 +22,9 @@ router.route('/')
 });
 
   .post(urlEncoded, function(request, response){
-  var newrcRecord = new rcRecord(request.body);
-    if(newrcRecord){
-    newrcRecord.save(function(error, results){
+  var newrcCollection = new rcCollection(request.body);
+    if(newrcCollection){
+    newrcCollection.save(function(error, results){
       if(error){
         response.status(500).send(error);
     }else{
@@ -32,34 +32,34 @@ router.route('/')
     }
     });
     }else{
-        response.status(400).json('error creating record');
+        response.status(400).json('error creating collection');
         }
   });
                                   
-      
-router.route('/:input')
+                                  
+                                                
+
+router.route('/:id')
   .get(function (request, response){
   var id = request.params.id;
   
-  rcRecord.find({ input: { $in: [input] }}, function (error, results){
+  rcCollection.findById(id, function (error, results){
     if(error){
       response.status(500).send(results);
     }else{
       response.send(results);
-    })
-  
-  
+    }
   });
 });
 
   .delete(function(request, response){
     var id = request.params.id;
     
-    rcRecord.findByIdAndRemove(id, function (error){
+    rcCollection.findByIdAndRemove(id, function (error){
       if(error){
         response.status(500).send(error);
     }else{
-      response.status(200).json('collection removed');
+      response.status(200)..json('collection removed');
     }
     
     });

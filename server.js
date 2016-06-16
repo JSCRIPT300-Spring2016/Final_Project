@@ -2,7 +2,9 @@ var express = require('express');
 
 var mongoose = require('mongoose');
 
-var rcRouter = require('./rcRecordroutes');
+var rcCollectionRouter = require('./rcCollectionroutes');
+
+var rcRecordRouter = require('./rcRecordroutes');
 
 var app = express();
 
@@ -10,7 +12,11 @@ var db = mongoose.connect('mongodb://localhost/reCollector');
 
 app.use(express.static('public'));
 
-app.use('/serverModule', rcRouter);
+app.use('/rcCollection', rcCollectionRouter);
+
+app.use('/rcRecord', rcRecordRouter)
+
+app.use('/serverModule', router);
 
 
 
