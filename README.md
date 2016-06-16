@@ -15,3 +15,27 @@ Fork this repository for your final project. For week 3, you will be adding your
 **I strongly recommend you keep your project simple**. There is a lot to do here, and any complexity will blow up the amount of time and effort required to complete it. Remember to build the simplest thing possible to achieve the task your application is meant to accomplish and avoid feature creep. You can always iterate on what you've built *after* you've completed the minimum viable product.
 
 *include your proposal in this README after this line:*
+
+This is an application to enter, rank and evaluate ideas.
+
+A user will be able to enter their name for identification.
+
+A user will be able to enter their ideas, one at a time.
+
+A user will be able to evaluate ideas in a given group of ideas.
+
+Done with basic product.
+
+Advanced features are:
+
+A user will be able to rank the ideas best to worst.
+
+A user will be able to delete an idea he owns.
+
+A user will be determine equivalent ideas.
+
+AS BUILT NOTES:
+
+Load mongo database data using -- mongo idea_1API < ideaJSON.js
+
+Only the application display sections were developed.
