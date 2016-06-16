@@ -1,11 +1,18 @@
 var express = require('express');
-var rcRecords = require('./rcRecords.js');
+
+var mongoose = require('mongoose');
+
+var rcRouter = require('./rcRecordroutes');
 
 var app = express();
 
-app.get('/', function(request, response){
-  response.send('Hello');
-});
+var db = mongoose.connect('mongodb://localhost/reCollector');
+
+app.use(express.static('public'));
+
+app.use('/serverModule', rcRouter);
+
+
 
 app.listen(3000, function(){
   console.log('listening');
