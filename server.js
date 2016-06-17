@@ -14,10 +14,7 @@ app.use(express.static('public'));
 
 app.use('/rcCollection', rcCollectionRouter);
 
-app.use('/rcRecord', rcRecordRouter)
-
-app.use('/serverModule', router);
-
+app.use('/rcRecord', rcRecordRouter);
 
 
 app.listen(3000, function(){
