@@ -8,8 +8,6 @@ var rcRecord = require('../models/rcRecordmodel');
 
 var router = express.Router();
 
-app.use(express.static('public'));
-
 router.route('/')
   .get(function(request, response){  
   rcRecord.find('input', function(error, results){

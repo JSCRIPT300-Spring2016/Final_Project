@@ -8,8 +8,6 @@ var rcCollection = require('../models/rcCollectionmodel');
 
 var router = express.Router();
 
-app.use(express.static('public'));
-
 router.route('/')
   .get(function(request, response){  
   rcCollection.find(function(error, results){
