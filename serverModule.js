@@ -33,7 +33,7 @@ function putCollection(){//send collection to db
 };
 
 
-};
+
 
 function addRecord(newRecord){//add item to db
   
