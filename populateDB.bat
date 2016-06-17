@@ -1,0 +1,1 @@
+mongo todoAPI < categoriesJSON.js
