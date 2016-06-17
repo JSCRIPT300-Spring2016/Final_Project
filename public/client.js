@@ -7,8 +7,8 @@ var viewListDisplay = new ViewListDisplay({el: '#catalogue'});
 var ViewAddDisplay = Backbone.View.extend({/*properties*/});
 var viewAddDisplay = new ViewAddDisplay({el: '#adddisplay'});
 
-var RcRecord = new Backbone.Model.extend({
-  initialize: function(){console.log("rcRecord initialized")}
+var RcRecord =  Backbone.Model.extend({
+  initialize: function(){console.log("rcRecord model initialized")}
               });
 var newRcRecord = new RcRecord();
 
