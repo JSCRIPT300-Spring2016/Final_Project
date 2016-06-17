@@ -1,17 +1,8 @@
 //backbone MVP Model View Presenter
 
-var rcCollection = Backbone.Model.extend({
-  initialize: function (){ 
-    console.log ('rcCollection created');
-  },
-  });
-
-rcCollection.on('change', function(){
-  console.log('rcCollection changed')
-});
 
 
-var rcRecord = Backbone.Model.extend();
+var rcRecord = new Backbone.Model();
 
 var newRcRecord = new rcRecord({
   artist: 'George Thorogood',//these values will come from the html form fields
@@ -49,26 +40,36 @@ var newRcRecord = new rcRecord({
 //  genre: 'Blues',
 //  format: '12 inch '
 //});
+var rcCollection = new Backbone.Model.extend({
+  initialize: function (){ 
+    console.log ('rcCollection created');
+  },
+  rcRecord: newRcRecord,
+  });
+
+
 $(function(){
 //    newRcRecord.set('html', '<tr><td>' +  newRcRecord.artist + '</td><td>' + newRcRecord.id + '</td></tr>');
-  rcCollection.set('html', '<tr><td>' +  newRcRecord.artist +
-                          '</td><td>' + newRcRecord.title +
-                          '</td><td>' + newRcRecord.label +
-                          '</td><td>' + newRcRecord.year +
-                          '</td><td>' + newRcRecord.sku +
-                          '</td><td>' + newRcRecord.copies +
-                          '</td><td>' + newRcRecord.sale +
-                          '</td><td>' + newRcRecord.added + 
-                          '</td><td>' + newRcRecord.id +
-                          '</td></tr>');
+    rcCollection.set('rcRecord' + rcRecord.id, newRcRecord);
+//  rcCollection.set('html', '<tr><td>' +  newRcRecord.artist +
+//                          '</td><td>' + newRcRecord.title +
+//                          '</td><td>' + newRcRecord.label +
+//                          '</td><td>' + newRcRecord.year +
+//                          '</td><td>' + newRcRecord.sku +
+//                          '</td><td>' + newRcRecord.copies +
+//                          '</td><td>' + newRcRecord.sale +
+//                          '</td><td>' + newRcRecord.added + 
+//                          '</td><td>' + newRcRecord.id +
+//                          '</td></tr>');
 //    $('#catalogue').append(newRcRecord.get('html'));
   $('#catalogue').append(newRcCollection.escape('html'));
 //  $('#catalogue').append(newRcRecord.escape('artist', 'title', 'label', 'year', 'sku', 'copies', 'sale', 'id'));
 });
 
+rcCollection.on('change', function(){
+  console.log('rcCollection changed');
+});
 
-
-console.log(newRcRecord.asString());
 
 
 
