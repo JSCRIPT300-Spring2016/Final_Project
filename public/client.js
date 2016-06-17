@@ -40,7 +40,7 @@ newRcCollection.on('change', function (){
 
 $(function(){
 //    newRcRecord.set('html', '<tr><td>' +  newRcRecord.artist + '</td><td>' + newRcRecord.id + '</td></tr>');
-    rcCollection.set('rcRecord' + rcRecord.id, newRcRecord);
+    newRcCollection.set('rcRecord' + rcRecord.id, newRcRecord);
 //  rcCollection.set('html', '<tr><td>' +  newRcRecord.artist +
 //                          '</td><td>' + newRcRecord.title +
 //                          '</td><td>' + newRcRecord.label +
@@ -72,9 +72,14 @@ viewControlsDisplay.$el.append(
   
 );
 
-var lisDisplayModel =  new Backbone.Model.extend();
 
-listDisplayModel.set('content', 'this is some content');
+var ListDisplayModel =  Backbone.Model.extend();
+
+var newListDisplayModel = new ListDisplayModel();
+
+
+
+newListDisplayModel.set('content', 'this is some content');
 viewListDisplay.$el.append( '<tr><td>' +  newRcRecord.artist +
                           '</td><td>' + newRcRecord.title +
                           '</td><td>' + newRcRecord.label +
