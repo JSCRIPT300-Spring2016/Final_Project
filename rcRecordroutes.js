@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 var urlEncoded = bodyParser.urlencoded({ extended: false });
 
-var rcRecord = require('./models/rcRecordmodel');
+var rcRecord = require('models/rcRecordmodel');
 
 var router = express.Router();
 
