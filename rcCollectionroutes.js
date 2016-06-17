@@ -18,8 +18,8 @@ router.route('/')
     }else{
       response.send(results);
     }
-  })
-});
+  });
+})
 
   .post(urlEncoded, function(request, response){
   var newrcCollection = new rcCollection(request.body);
@@ -50,7 +50,7 @@ router.route('/:id')
       response.send(results);
     }
   });
-});
+})
 
   .delete(function(request, response){
     var id = request.params.id;
@@ -58,9 +58,9 @@ router.route('/:id')
     rcCollection.findByIdAndRemove(id, function (error){
       if(error){
         response.status(500).send(error);
-    }else{
-      response.status(200)..json('collection removed');
-    }
+      }else{
+      response.status(200).json('collection removed');
+      }
     
     });
   });
