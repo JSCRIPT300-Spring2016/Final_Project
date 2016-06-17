@@ -49,6 +49,7 @@ var newRcRecord = new RcRecord({
 //  format: '12 inch '
 //});
 $(function(){
+//    newRcRecord.set('html', '<tr><td>' +  newRcRecord.artist + '</td><td>' + newRcRecord.id + '</td></tr>');
   newRcRecord.set('html', '<tr><td>' +  newRcRecord.artist +
                           '</td><td>' + newRcRecord.title +
                           '</td><td>' + newRcRecord.label +
@@ -59,7 +60,7 @@ $(function(){
                           '</td><td>' + newRcRecord.added + 
                           '</td><td>' + newRcRecord.id +
                           '</td></tr>');
-    $('#catalogue').append(newRcRecord.get('html'));
+//    $('#catalogue').append(newRcRecord.get('html'));
   $('#catalogue').append(newRcRecord.escape('html'));
 //  $('#catalogue').append(newRcRecord.escape('artist', 'title', 'label', 'year', 'sku', 'copies', 'sale', 'id'));
 });

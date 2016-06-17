@@ -1,0 +1,1 @@
+db.recollector.insert("this is testing mongo db");
