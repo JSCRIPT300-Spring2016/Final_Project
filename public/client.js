@@ -2,9 +2,13 @@
 
 
 
-var rcRecord = new Backbone.Model();
+var rcRecord = new Backbone.Model.extend({
+  initialize: function(){console.log("rcRecord initialized")}
+});
 
-var newRcRecord = new rcRecord({
+var newRcRecord = new RcRecord();
+
+newRcRecord = {
   artist: 'George Thorogood',//these values will come from the html form fields
   title: 'Move it On Over',
   label: 'Rounder',
@@ -14,7 +18,7 @@ var newRcRecord = new rcRecord({
   sale: 'yes',
   added: new Date(),
   id: 'rcRecord123456789'
-})
+};
 
 //var RcRecord = Backbone.Model.extend({
 //  initialize: function (){ //native property no value until valued
@@ -40,11 +44,22 @@ var newRcRecord = new rcRecord({
 //  genre: 'Blues',
 //  format: '12 inch '
 //});
-var rcCollection = new Backbone.Model.extend({
-  initialize: function (){ 
-    console.log ('rcCollection created');
-  },
-  rcRecord: newRcRecord,
+var rcCollection = new RcCollection();
+rcCollection.on('change', function (){ 
+    console.log ('this collection changed');
+  });
+  rcCollection.on('add', function (){ 
+    console.log ('this collection was added to');
+  });
+
+//var rcCollection = new Backbone.Collection(
+//);
+
+rcCollection.on('change', function (){ 
+    console.log ('this collection changed');
+  });
+  rcCollection.on('add', function (){ 
+    console.log ('this collection was added to');
   });
 
 
@@ -66,9 +81,6 @@ $(function(){
 //  $('#catalogue').append(newRcRecord.escape('artist', 'title', 'label', 'year', 'sku', 'copies', 'sale', 'id'));
 });
 
-rcCollection.on('change', function(){
-  console.log('rcCollection changed');
-});
 
 
 
