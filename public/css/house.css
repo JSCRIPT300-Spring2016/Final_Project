@@ -1,0 +1,146 @@
+.center {
+	text-align: center;
+	}
+.left {
+	text-align: left;
+	}
+body {
+    background-color: white;
+    font-family: arial;
+    color:black;	
+    font-size: 100%;
+}
+h1 {
+	font-family: broadway;
+    font-size: 5em;
+}
+
+h2 {
+	font-family: papyrus;
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+p {
+    font-size: 1.5em;
+}
+	
+.blue {
+	color: blue;
+}	
+.yellow {
+	color: yellow;
+}
+.red {
+	color: red;
+}
+.green {
+	color: lightgreen;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+ul.navigation {
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li.navigation {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.navigation{
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.listHeading {
+  font-size: 2em;
+  color: darkgreen;
+}
+
+.detailList {
+  list-style-type: none;
+  font-size: 0.5em;
+  font-weight: bold;
+  color: #yellow;
+  padding: 5em;
+}
+
+.houseList__item,
+.detailList_item{
+    font-size: 0.75em;
+}
+
+.houseLink {
+  text-decoration: none;
+}
+
+.housesList,
+.shortList{
+    background-color: white;
+    font-family: Courier New;
+    color:black;	
+    font-size: 1em;
+	text-align: left;
+	list-style-type:none;
+}
+
+.deleteHouse{
+
+}
+
+.addHouseForm{
+
+}
