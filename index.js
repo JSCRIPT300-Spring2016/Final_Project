@@ -8,7 +8,7 @@ app.use(express.static('public'));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
-app.use('/', gardenRoutes);
+app.use('/api/garden', gardenRoutes);
 
 app.listen(3000, function() {
   console.log('Planting on port 3000');

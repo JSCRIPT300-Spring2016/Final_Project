@@ -25,5 +25,12 @@ module.exports = {
       var view = new PlantListView({ model: plant });
       $('#list-of-plants').append(view.render().el);
     });
+  },
+
+  showSoonToPlantPlants: function() {
+    console.log('we are trying to list plants to plant soon');
+    //this is not producing a list of plants from the plant list
+    var plantCollection = new PlantListCollection();
+    console.log(plantCollection);
   }
 }

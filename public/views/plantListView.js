@@ -19,7 +19,7 @@ module.exports = Backbone.View.extend({
   render: function() {
     var datePlanted = new Date(this.model.get('datePlanted'));
     var dateHarvested = new Date(this.model.get('dateHarvested'));
-    this.$el.html(this.model.get('name') + '<ul><li>Number of plants: ' + this.model.get('number') + '</li> <li>Space per plant: ' + this.model.get('spaceNeededPerPlant') + ' sq. ft.</li> <li>Total space needed: ' + this.model.get('totalSpaceNeeded') + ' sq. ft.</li> <li>Date planted: ' + dateFormat(this.model.get('datePlanted')) + '</li> <li>Date harvested: ' + this.model.get('dateHarvested') + '</li></ul>');
+    this.$el.html(this.model.get('name') + '<ul><li>Number of plants: ' + this.model.get('number') + '</li> <li>Space per plant: ' + this.model.get('spaceNeededPerPlant') + ' sq. ft.</li> <li>Total space needed: ' + this.model.get('totalSpaceNeeded') + ' sq. ft.</li> <li>Date planted: ' + dateFormat(this.model.get('datePlanted')) + '</li> <li>Date harvested: ' + dateFormat(this.model.get('dateHarvested')) + '</li></ul>');
     return this;
   }
 });

@@ -17,6 +17,7 @@ module.exports = Backbone.View.extend({
     // help here? http://slides.com/kinakuta/deck-17?token=vY03XdtR#/8
     // may need vent
 
-    Backbone.history.start({ hashChange: false, pushState: true, root: '/' });
+    // Backbone.history.start({ hashChange: false, pushState: true });
+    Backbone.history.start();
   }
 });

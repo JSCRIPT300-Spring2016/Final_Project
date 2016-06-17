@@ -15,9 +15,14 @@ router.route('/')
     if (!newPlant) {
       response.status(400).json('problem with adding plant');
     } else {
-      newBook = books.addPlant(newPlant);
+      newBook = garden.addPlant(newPlant);
       response.status(201).send(newPlant);
     }
+  });
+
+router.route('/#planting')
+  .get(function(request, response) {
+    response.status(200).json(garden.showSoonToPlantPlants());
   });
 
 router.route('/:name')

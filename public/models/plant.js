@@ -1,7 +1,7 @@
 var Backbone = require('backbone');
 
 module.exports = Backbone.Model.extend({
-  urlRoot: '/',
+  urlRoot: '/api/garden',
   defaults: {
     name: '',
     datePlanted: null,

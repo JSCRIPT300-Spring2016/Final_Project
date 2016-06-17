@@ -16,6 +16,13 @@ module.exports = [{
       "name": "zucchini",
       "number": 2,
       "spaceNeededPerPlant": 2,
-      "datePlanted": "2016-06-020T07:00:00.000Z",
-      "dateHarvested": "2016-08-30T07:00:00.000Z"
-    }]
+      "datePlanted": "2016-06-20T07:00:00.000Z",
+      "dateHarvested": "2016-08-31T07:00:00.000Z"
+    },
+    {
+        "name": "corn",
+        "number": 2,
+        "spaceNeededPerPlant": 2,
+        "datePlanted": "2016-04-10T07:00:00.000Z",
+        "dateHarvested": "2016-06-10T07:00:00.000Z"
+      }]

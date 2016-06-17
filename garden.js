@@ -1,11 +1,3 @@
-// seeded (harhar) with one plant
-var plantList = [
-  { name: 'lettuce',
-    number: 4,
-    spaceNeeded: .5
-  }
-];
-
 function Plant(name, datePlanted, dateHarvested, number, spaceNeeded) {
   this.name = name;
   this.datePlanted = datePlanted;
@@ -15,8 +7,8 @@ function Plant(name, datePlanted, dateHarvested, number, spaceNeeded) {
   this.totalSpaceNeeded = number * spaceNeededPerPlant;
 }
 
-function addPlant(name, datePlanted, dateHarvested, number, spaceNeeded) {
-  var newPlant = new Plant(name, datePlanted, dateHarvested, number, spaceNeeded);
+function addPlant(name, datePlanted, dateHarvested, number, spaceNeededPerPlant) {
+  var newPlant = new Plant(name, datePlanted, dateHarvested, number, spaceNeededPerPlant);
   plantList.append(newPlant);
 }
 
@@ -30,7 +22,7 @@ function editPlant(edits) {
   plantList[plantIndex].datePlanted = edits.datePlanted;
   plantList[plantIndex].dateHarvested = edits.dateHarvested;
   plantList[plantIndex].number = edits.number;
-  plantList[plantIndex].spaceNeededPerPlant = edits.spaceNeeded;
+  plantList[plantIndex].spaceNeededPerPlant = edits.spaceNeededPerPlant;
   plantList[plantIndex].totalSpaceNeeded = plantList[plantIndex].spaceNeededPerPlant * plantList[plantIndex].number;
 
   return plantList[plantIndex];
@@ -51,7 +43,18 @@ function findPlantsByDate(date) {
 }
 
 function getPlants() {
+  console.log(plantList);
   return plantList;
+}
+
+function showSoonToPlantPlants() {
+  // returning the entire plantList just to test that the route works
+  return plantList;
+  // var today = new Date();
+  // var soonToPlant = _.filter(plantList, function(plant) {
+  //   return ((plant.datePlanted - (14 * 24 * 60 * 60 * 1000)) <= today && (today + (14 * 24 * 60 * 60 * 1000)) <= plant.datePlanted);
+  // });
+  // return soonToPlant;
 }
 
 module.exports = {

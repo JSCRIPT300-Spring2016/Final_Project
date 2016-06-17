@@ -13521,7 +13521,8 @@ var Backbone = require('backbone');
 var Plant = require('../models/plant');
 
 module.exports = Backbone.Collection.extend({
-  model: Plant
+  model: Plant,
+  url: '/api/garden'
 });
 
 },{"../models/plant":8,"backbone":1}],6:[function(require,module,exports){
@@ -13552,6 +13553,13 @@ module.exports = {
       var view = new PlantListView({ model: plant });
       $('#list-of-plants').append(view.render().el);
     });
+  },
+
+  showSoonToPlantPlants: function() {
+    console.log('we are trying to list plants to plant soon');
+    //this is not producing a list of plants from the plant list
+    var plantCollection = new PlantListCollection();
+    console.log(plantCollection);
   }
 }
 
@@ -13656,7 +13664,7 @@ $(function () {
 var Backbone = require('backbone');
 
 module.exports = Backbone.Model.extend({
-  urlRoot: '/',
+  urlRoot: '/api/garden',
   defaults: {
     name: '',
     datePlanted: null,
@@ -13688,9 +13696,16 @@ module.exports = [{
       "name": "zucchini",
       "number": 2,
       "spaceNeededPerPlant": 2,
-      "datePlanted": "2016-06-020T07:00:00.000Z",
-      "dateHarvested": "2016-08-30T07:00:00.000Z"
-    }]
+      "datePlanted": "2016-06-20T07:00:00.000Z",
+      "dateHarvested": "2016-08-31T07:00:00.000Z"
+    },
+    {
+        "name": "corn",
+        "number": 2,
+        "spaceNeededPerPlant": 2,
+        "datePlanted": "2016-04-10T07:00:00.000Z",
+        "dateHarvested": "2016-06-10T07:00:00.000Z"
+      }]
 
 },{}],10:[function(require,module,exports){
 var Backbone = require('backbone');
@@ -13699,25 +13714,29 @@ var header = require('../views/header');
 module.exports = Backbone.Router.extend({
   routes: {
     '(/)': 'home',
-    '*path': 'noMatch',
-    '/alert(/)': 'alAlarm'
+    // '*path': 'noMatch',
+    // '/alert(/)': 'alAlarm'
+    'planting': 'soonToPlantList',
+    'harvesting': 'soonToHarvestList'
   },
   initialize: function(options) {
     console.log('initialized main router');
     options || {};
     this.mainController = options.mainController;
   },
-  alAlarm: function() {
-    alert('oh it works!');
-  },
-  noMatch: function(){
-    console.log('no matching url');
-  },
+  // alAlarm: function() {
+  //   alert('oh it works!');
+  // },
+  // noMatch: function(){
+  //   console.log('no matching url');
+  // },
   home: function() {
-    console.log('a new route!');
-    //this should be working but isn't
     this.mainController.showHome();
     this.mainController.allPlants();
+  },
+  soonToPlantList: function() {
+    this.mainController.showHome();
+    this.mainController.showSoonToPlantPlants();
   }
 });
 
@@ -13752,7 +13771,8 @@ module.exports = Backbone.View.extend({
     // help here? http://slides.com/kinakuta/deck-17?token=vY03XdtR#/8
     // may need vent
 
-    Backbone.history.start({ hashChange: false, pushState: true, root: '/' });
+    // Backbone.history.start({ hashChange: false, pushState: true });
+    Backbone.history.start();
   }
 });
 
@@ -13772,6 +13792,7 @@ module.exports = Backbone.View.extend({
 },{"backbone":1}],14:[function(require,module,exports){
 var Backbone = require('backbone');
 var dateFormat = require('dateformat');
+// https://www.npmjs.com/package/dateformat
 
 var plantData = require('../models/plant');
 var initialPlants = require('../plants');
@@ -13790,11 +13811,9 @@ module.exports = Backbone.View.extend({
   render: function() {
     var datePlanted = new Date(this.model.get('datePlanted'));
     var dateHarvested = new Date(this.model.get('dateHarvested'));
-    this.$el.html(this.model.get('name') + '<ul><li>Number of plants: ' + this.model.get('number') + '</li> <li>Space per plant: ' + this.model.get('spaceNeededPerPlant') + ' sq. ft.</li> <li>Total space needed: ' + this.model.get('totalSpaceNeeded') + ' sq. ft.</li> <li>Date planted: ' + dateFormat(this.model.get('datePlanted')) + '</li> <li>Date harvested: ' + this.model.get('dateHarvested') + '</li></ul>');
+    this.$el.html(this.model.get('name') + '<ul><li>Number of plants: ' + this.model.get('number') + '</li> <li>Space per plant: ' + this.model.get('spaceNeededPerPlant') + ' sq. ft.</li> <li>Total space needed: ' + this.model.get('totalSpaceNeeded') + ' sq. ft.</li> <li>Date planted: ' + dateFormat(this.model.get('datePlanted')) + '</li> <li>Date harvested: ' + dateFormat(this.model.get('dateHarvested')) + '</li></ul>');
     return this;
   }
 });
- // add in later:
- //  + '</li> <li>Date planted: ' + this.model.get('datePlanted') + '</li> <li>Date harvested: ' + this.model.get('dateHarvested') +
 
 },{"../collections/PlantListCollection":5,"../models/plant":8,"../plants":9,"backbone":1,"dateformat":2}]},{},[7]);
