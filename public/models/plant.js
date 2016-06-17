@@ -6,8 +6,10 @@ module.exports = Backbone.Model.extend({
     name: '',
     datePlanted: null,
     dateHarvested: null,
-    number: 1,
-    spaceNeededPerPlant: .5,
-    totalSpaceNeeded: this.number * this.spaceNeededPerPlant
+    number: null,
+    spaceNeededPerPlant: null
+  },
+  initialize: function() {
+    this.set('totalSpaceNeeded', this.attributes.number * this.attributes.spaceNeededPerPlant);
   }
 });
