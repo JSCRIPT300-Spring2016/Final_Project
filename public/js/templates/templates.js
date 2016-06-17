@@ -24,8 +24,8 @@ this["TFT"]["HouseListItem"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<a class="house" href="/houses/' +
-((__t = ( _id)) == null ? '' : __t) +
+__p += '<a class="houseLink" href="/houses/' +
+((__t = ( street)) == null ? '' : __t) +
 '">\r\n  <p class="shortList"><u>Address:</u>' +
 ((__t = ( street )) == null ? '' : __t) +
 ', ' +

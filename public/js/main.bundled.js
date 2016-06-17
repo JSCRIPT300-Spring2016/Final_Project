@@ -29962,13 +29962,13 @@ function showAllHouses() {
   });
 }
 
-//change to id as it's the id that is handed in in router
 function showHouse(options) {
   var model = options.model;
+
   jqxhr.done(function () {
-    //console.log("id ", model.id);
-    model = houses.findWhere({ _id: model.id });
-    //console.log("find where model ", model);
+    if (options.street) {
+      model = houses.findWhere({ street: options.street });
+    }
     resultsView.showHouse(model);
   });
 }
@@ -30082,12 +30082,11 @@ module.exports = Backbone.Router.extend({
   showHouseForm: function(){
     this.appController.showAddForm();
   },
-  showHouse: function (id) {
-    this.appController.showHouse({ id: id });
+  showHouse: function (street) {
+    this.appController.showHouse({ street: street });
   },
-  
-  deleteHouse:function (id) {
-    this.appController.deleteHouse({ id: id });
+  deleteHouse:function (street) {
+    this.appController.deleteHouse({ street: street });
   }
 
 });

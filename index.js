@@ -1,8 +1,9 @@
 var express = require('express');
 var path = require('path');
 var spaRoute = require('./utils/spa-server-route');
-var houseAPIRouter = require('./routes/houseRoutes');
 var mongoose = require('mongoose');
+var houseAPIRouter = require('./routes/houseRoutes');
+
 
 /*eslint-disable no-unused-vars*/
 var db = mongoose.connect('mongodb://localhost/houseAPI');

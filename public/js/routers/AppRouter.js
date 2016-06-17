@@ -23,12 +23,11 @@ module.exports = Backbone.Router.extend({
   showHouseForm: function(){
     this.appController.showAddForm();
   },
-  showHouse: function (id) {
-    this.appController.showHouse({ id: id });
+  showHouse: function (street) {
+    this.appController.showHouse({ street: street });
   },
-  
-  deleteHouse:function (id) {
-    this.appController.deleteHouse({ id: id });
+  deleteHouse:function (street) {
+    this.appController.deleteHouse({ street: street });
   }
 
 });

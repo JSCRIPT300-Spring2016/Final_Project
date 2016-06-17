@@ -28,13 +28,13 @@ function showAllHouses() {
   });
 }
 
-//change to id as it's the id that is handed in in router
 function showHouse(options) {
   var model = options.model;
+
   jqxhr.done(function () {
-    //console.log("id ", model.id);
-    model = houses.findWhere({ _id: model.id });
-    //console.log("find where model ", model);
+    if (options.street) {
+      model = houses.findWhere({ street: options.street });
+    }
     resultsView.showHouse(model);
   });
 }
