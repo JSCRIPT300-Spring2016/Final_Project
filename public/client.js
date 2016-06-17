@@ -40,7 +40,7 @@ newRcCollection.on('change', function (){
 
 $(function(){
 //    newRcRecord.set('html', '<tr><td>' +  newRcRecord.artist + '</td><td>' + newRcRecord.id + '</td></tr>');
-    newRcCollection.set('rcRecord' + rcRecord.id, newRcRecord);
+    newRcCollection.set('rcRecord' + newRcRecord.id, newRcRecord);
 //  rcCollection.set('html', '<tr><td>' +  newRcRecord.artist +
 //                          '</td><td>' + newRcRecord.title +
 //                          '</td><td>' + newRcRecord.label +
