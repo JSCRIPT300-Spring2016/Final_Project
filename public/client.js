@@ -24,22 +24,17 @@ newRcRecord = {
   id: 'rcRecord123456789'
 };
 
-var rcCollection = new RcCollection();
-rcCollection.on('change', function (){ 
+var RcCollection =  Backbone.Model.extend({
+  initialize: function(){console.log("rcCollection model initialized")}
+              });
+
+var newRcCollection = new RcCollection();
+
+newRcCollection.on('change', function (){ 
     console.log ('this collection changed');
   });
-  rcCollection.on('add', function (){ 
-    console.log ('this collection was added to');
-  });
-
-//var rcCollection = new Backbone.Collection(
-//);
-
-rcCollection.on('change', function (){ 
-    console.log ('this collection changed');
-  });
-  rcCollection.on('add', function (){ 
-    console.log ('this collection was added to');
+  newRcCollection.on('add', function (){ 
+    console.log ('something  was added to this collection');
   });
 
 
@@ -77,7 +72,8 @@ viewControlsDisplay.$el.append(
   
 );
 
-var lisDisplayModel =  new Backbone.Model();
+var lisDisplayModel =  new Backbone.Model.extend();
+
 listDisplayModel.set('content', 'this is some content');
 viewListDisplay.$el.append( '<tr><td>' +  newRcRecord.artist +
                           '</td><td>' + newRcRecord.title +
