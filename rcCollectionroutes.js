@@ -6,7 +6,6 @@ var urlEncoded = bodyParser.urlencoded({ extended: false });
 
 var rcCollection = require('./models/rcCollectionmodel');
 
-
 var router = express.Router();
 
 router.route('/')

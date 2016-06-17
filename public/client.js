@@ -6,7 +6,9 @@ var rcCollection = Backbone.Model.extend({
   },
   });
 
-
+rcCollection.on('change', function(){
+  console.log('rcCollection changed')
+});
 
 
 var rcRecord = Backbone.Model.extend();
