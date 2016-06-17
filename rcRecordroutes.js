@@ -18,8 +18,8 @@ router.route('/')
     }else{
       response.send(results);
     }
-  })
-});
+  });
+})
 
   .post(urlEncoded, function(request, response){
   var newrcRecord = new rcRecord(request.body);
@@ -39,18 +39,18 @@ router.route('/')
       
 router.route('/:input')
   .get(function (request, response){
-  var id = request.params.id;
+  var id = request.params.input;
   
   rcRecord.find({ input: { $in: [input] }}, function (error, results){
     if(error){
       response.status(500).send(results);
     }else{
       response.send(results);
-    })
+    }
   
   
   });
-});
+})
 
   .delete(function(request, response){
     var id = request.params.id;
