@@ -2,13 +2,14 @@
 
 var rcCollection = Backbone.Model.extend({
   initialize: function (){ //native property no value until valued
-    return 'rcCollection created';
+    console.log ('rcCollection created');
   },
-  asString: function(){
-    return JSON.stringify(this.toJSON());//toJSON is native backbone
-  },
-
+  });
+ rcCollection.on('change', function(){
+  console.log('a record was added to this collection')
 });
+
+
 
 var RcRecord = rcCollection.extend();
 
@@ -50,7 +51,7 @@ var newRcRecord = new RcRecord({
 //});
 $(function(){
 //    newRcRecord.set('html', '<tr><td>' +  newRcRecord.artist + '</td><td>' + newRcRecord.id + '</td></tr>');
-  newRcRecord.set('html', '<tr><td>' +  newRcRecord.artist +
+  newRcCollection.set('html', '<tr><td>' +  newRcRecord.artist +
                           '</td><td>' + newRcRecord.title +
                           '</td><td>' + newRcRecord.label +
                           '</td><td>' + newRcRecord.year +
@@ -61,7 +62,7 @@ $(function(){
                           '</td><td>' + newRcRecord.id +
                           '</td></tr>');
 //    $('#catalogue').append(newRcRecord.get('html'));
-  $('#catalogue').append(newRcRecord.escape('html'));
+  $('#catalogue').append(newRcCollection.escape('html'));
 //  $('#catalogue').append(newRcRecord.escape('artist', 'title', 'label', 'year', 'sku', 'copies', 'sale', 'id'));
 });
 
