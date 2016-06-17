@@ -1,0 +1,57 @@
+<% layout( 'layout' ) -%>
+
+<div class="container">
+  <div class="header">
+    <ul class="nav nav-pills pull-right">
+      <li><a href="/">Home</a></li>
+      <li><a href="/categories">Categories</a></li>
+      <li class="active"><a href="#">Tasks Todo</a></li>
+    </ul>
+    <h3 class="text-muted" title="<%= category.description %>">Things Todo - <%= category.name %></h3>
+  </div>
+ 
+<div class="jumbotron">
+  <p><a class="btn btn-lg btn-success"  data-toggle="modal" href="#todoModal">Add Task</a></p>
+
+  <% tasks.forEach( function ( task ){ %>
+    <div class="task-item"> 
+       <a class="update-link" href="/tasks/<%= task.categoryId %>/<%= task._id %>" title="Update this todo item"><%= task.name %></a> 
+       <a class="btn-group btn-group-xs btn-link" data-category="<%= task.categoryId %>/<%= task._id %>" href="#" title="Delete this todo item">X</a>
+    </div> 
+  <% }); %>
+</div>
+
+
+<div class="footer">
+  <p>&copy; imauser99 2016</p>
+</div>
+
+<!-- Modal Form-->
+<div class="modal fade" id="todoModal" tabindex="-1" role="dialog" aria-labelledby="todoModal" aria-hidden="true" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Provide a few details about your new todo task...</h4>
+      </div>
+      <div class="modal-body">
+        <form id="todoForm" role="form"  onsubmit="return false">
+          <input type="hidden" id="categoryId" name="categoryId" value="<%= category._id %>">
+          <div class="form-group">
+            <label for="taskName">Task Name</label>
+            <input type="text" class="form-control" id="taskName" name="name" placeholder="Task name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+         <label for="submit" id="status" class="pull-left"> </label>
+         <button id="submit" type="button" class="btn btn-primary">Add Task</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div> <!-- /container -->
+
+<script src="/task.js"></script>
+
