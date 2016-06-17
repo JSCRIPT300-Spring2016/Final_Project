@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 var urlEncoded = bodyParser.urlencoded({ extended: false });
 
-var rcCollection = require('../models/rcCollectionmodel');
+var rcCollection = require('./models/rcCollectionmodel');
 
 var router = express.Router();
 
