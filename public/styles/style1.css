@@ -1,0 +1,195 @@
+@charset "utf-8";
+* {
+	 box-sizing: border-box;
+}
+body{
+/*  background: linear-gradient(90, #666633, #333333);*/
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#66ffff, #ffffff, #66ffff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#66ffff, #ffffff, #66ffff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#66ffff, #ffffff, #66ffff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#66ffff, #ffffff, #66ffff); /* Standard syntax */
+  padding: 0;
+  margin: 0.6em;
+}
+
+#listdisplay {
+  padding: 1.3em 0 0 0;
+  margin: 1em 0 0.2em 0;
+  min-height: 4.6em;
+  width: 100%;
+  
+  font-family: serif;
+  font-size: 4em;
+  background-color: rgba(102, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 52, 52, 0.5);
+  border-width: 0 0 6px 0; 
+  border-radius: 22px;
+  
+  text-transform: capitalize;
+}
+#listdisplay table{
+  margin: -52px auto 0 auto;
+}
+
+#adddisplay {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  font-family: serif;
+  font-size: 4em;
+  background-color: rgba(102, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.8);
+  border-color: red;
+  border-bottom-width: 6px ; 
+  border-radius: 22px;
+  overflow: hidden;
+  text-align: center;
+}
+.show{
+  display: inline-block;
+}
+.hide{
+  display: none;
+}
+.addprop{
+  margin: 0;
+  padding: .2em .4em .2em .4em;
+  background: #05668D;
+  font-family: sans-serif;
+  font-size: 2em;
+  color:#f0f3bd;
+  text-transform: capitalize;
+}
+thead{
+  margin: 0;
+  padding: .2em .4em .2em .4em;
+  font-family: serif;
+  font-size: 1.4em;
+  color:#000;
+  text-transform: capitalize; 
+}
+
+input{
+  margin: 0 1em 1em 0;
+}
+#logo{
+  font-family: 'Righteous', sans-serif;
+  color: rgba(255, 52, 52, 1);
+  font-size: 16vw;
+  text-align: center;
+}
+
+#addnew{
+  width: 100%;
+  font-family: serif;
+  font-size: 4em;
+  background-color: rgba(102, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 52, 52, 0.5);
+  border-width: 0 0 6px 0; 
+  border-radius: 100%;
+  line-height: 78%;
+  margin: 0 0 0.8em 0;
+  padding: 10px;
+  cursor: pointer;
+}
+#controlsdisplay{
+  width: 100%;
+  color: rgba(0, 0, 0, 1);
+  padding:0;
+  margin-top: -74px;
+  background-color: rgba(255, 52, 52, 0.4);
+}
+#controlsdisplay ul li{
+  display:inline;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#controlsdisplay ul li label{
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 1);
+  font-size: 16px;
+  margin: 0 0 0 12px;
+  
+}
+#autosync{
+  margin: 0 0 0 -10px;
+}
+thead{
+  width: 100%;
+  font-family: sans-serif;
+  font-size: .5em;
+  background-color: rgba(255, 52, 52, 1);
+  color: rgba(102, 255, 255, 1);
+  text-align: center;
+  text-transform: lowercase;
+}
+thead tr td{
+  padding: 0 8px 0 8px;
+}
+#catalogue{
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 1);
+  font-size: .3em;
+  text-align: center;
+}
+#listcount{
+    font-family: sans-serif;
+  color: rgba(0, 0, 0, 1);
+  font-size: 16px;
+  margin: 0;
+}
+
+#adddisplay label{
+  font-family: serif;
+  font-size: 0.6em;
+  color: rgba(255, 52, 52, 1);
+  margin: 0;
+  padding: 0;
+}
+#adddisplay input{
+    width: 100%;
+  font-family: serif;
+  font-size: .4em;
+  color: rgba(0, 0, 0, 1);
+  margin: 0 0 24px 0;
+  padding: 0 6px 0 16px 0;
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 1);
+  text-transform: capitalize;
+}
+#adddisplay select{
+  width: 100%;
+  font-family: serif;
+  font-size: 0.5em;
+  color: rgba(0, 0, 0, 1);
+  margin: 0 0 26px 0;
+  padding: 0;
+  font-family: serif;
+  font-size: .4em;
+  color: rgba(0, 0, 0, 1);
+  font-family: sans-serif;
+}
+.addcol{
+  line-height: 28px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+#commitdisplay{
+  width: 100%;
+  color: rgba(0, 0, 0, 1);
+  padding:0 12px 0 28px;
+  background-color: rgba(255, 52, 52, 0.4);
+  text-align: left;
+}
+#listcontainer{
+  overflow: scroll;
+  height: 3.2em;
+  margin: -64px 0 0 0;
+}
+

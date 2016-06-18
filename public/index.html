@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>reCollector: Record Collection Cataloguer</title>
+<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+  <link href="styles/style1.css" type="text/css" rel="stylesheet" media="screen and (min-width:1px) and (max-width:799px)" />
+<link href="styles/style1.css" type="text/css" rel="stylesheet" media="screen and (min-width:800px) and (max-width:2048px)" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!--<script type="text/javascript" src="scripts/rcc.js"></script>-->
+
+  </head>
+  <body>
+    
+<div id="logo">reCollector</div>    
+<div id="person">  
+  <a href="#adddisplay"><button type="button" id="addnew">Add New</button></a>
+</div>    
+
+  <div id="controlsdisplay">
+
+    </div>
+<div id="listdisplay">
+  <table>
+		<thead>
+          <tr>
+          <td>Artist</td>
+          <td>Title</td>
+          <td>Year</td>  
+          <td>Label</td>
+          <td>SKU</td>
+          <td>Sale</td>
+          <td>Copies</td>
+          <td>Added</td>
+          <td>ID</td>   
+          </tr>
+		</thead>
+    <tbody id="catalogue"> 
+		</tbody>
+	</table>
+</div>
+<!--end listdisplay-->
+    
+<div class="show" id="adddisplay">
+
+    <div id="commitdisplay">
+
+  </div>
+</div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
+    <script src="client.js"></script>
+</body>
+  
+</html> 
