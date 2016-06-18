@@ -15,3 +15,20 @@ Fork this repository for your final project. For week 3, you will be adding your
 **I strongly recommend you keep your project simple**. There is a lot to do here, and any complexity will blow up the amount of time and effort required to complete it. Remember to build the simplest thing possible to achieve the task your application is meant to accomplish and avoid feature creep. You can always iterate on what you've built *after* you've completed the minimum viable product.
 
 *include your proposal in this README after this line:*
+
+Proposal:
+--------
+
+Build a general merchandise website consisting of the following features:
+- Display items and their prices.
+- User can click on each item to view picture of the item and detailed description.
+- User can choose the items and add to shopping cart.
+- User places the order, chooses delivery options and method of payments.
+- User sees a receipt of the order.
+
+Notes:
+-----
+I had numerous problems implementing the above Proposal.  Therefore, I modified the food-truck-app project a little bit to have the following:
+- Use the same foodTruckAPI but with different data.  The food vendor and food types are replaced with clothing vendor and clothing types.  Note that "foodTruckAPI" is still used.  So, to import the data into the MongoDB, I typed:
+'mongo foodTruckAPI < tailorTrucksJSON.js'
+- Add the "Payment Types" choice so the user can view all accepted payment types and the clothing vendors that accept the certain type of payment.
