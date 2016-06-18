@@ -79,7 +79,7 @@ var newListDisplayModel = new ListDisplayModel();
 
 
 
-newListDisplayModel.set('content', 'this is some content');
+//newListDisplayModel.set();
 viewListDisplay.$el.append( '<tr><td>' +  newRcRecord.artist +
                           '</td><td>' + newRcRecord.title +
                           '</td><td>' + newRcRecord.label +
@@ -90,6 +90,8 @@ viewListDisplay.$el.append( '<tr><td>' +  newRcRecord.artist +
                           '</td><td>' + newRcRecord.added + 
                           '</td><td>' + newRcRecord.id +
                           '</td></tr>');
+
+//newAddDisplayModel.set();
 viewAddDisplay.$el.append(
 //  <form id="addrecord">
 //	<div class="addcol">
