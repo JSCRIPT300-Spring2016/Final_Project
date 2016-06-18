@@ -1,0 +1,29 @@
+{
+  "name": "emma-luk-project",
+  "version": "1.0.0",
+  "description": "Emma Luk Final_Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emma-luk/emma-luk-project.git"
+  },
+  "author": "Emma Luk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emma-luk/emma-luk-project/issues"
+  },
+  "homepage": "https://github.com/emma-luk/emma-luk-project#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "e": "0.0.4",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "mongoose": "^4.5.0",
+    "nodemailer": "^2.4.2",
+    "socket.io": "^1.4.6",
+    "underscore": "^1.8.3"
+  }
+}
