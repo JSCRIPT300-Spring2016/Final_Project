@@ -25,3 +25,10 @@ Build a general merchandise website consisting of the following features:
 - User can choose the items and add to shopping cart.
 - User places the order, chooses delivery options and method of payments.
 - User sees a receipt of the order.
+
+Notes:
+-----
+I had numerous problems implementing the above Proposal.  Therefore, I modified the food-truck-app project a little bit to have the following:
+- Use the same foodTruckAPI but with different data.  The food vendor and food types are replaced with clothing vendor and clothing types.  Note that "foodTruckAPI" is still used.  So, to import the data into the MongoDB, I typed:
+'mongo foodTruckAPI < tailorTrucksJSON.js'
+- Add the "Payment Types" choice so the user can view all accepted payment types and the clothing vendors that accept the certain type of payment.
