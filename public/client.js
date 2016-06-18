@@ -1,3 +1,24 @@
+var Workspace = Backbone.Router.extend(
+routes: {
+  'showadddisplay': 'showadddisplay',
+  'hideadddisplay': 'hideadddisplay'
+  },
+  showadddisplay: function showAddDisplay(evt){
+    $('#adddisplay').removeClass('hide');
+    $('#adddisplay').addClass('show');
+    var genId = (Math.random()) * (Math.pow(10, 17));
+    $('#idInput').val(genId);
+  };
+  var addButton = $('#addnew').on('click', showAddDisplay),
+      
+  hideadddisplay:   function hideAddDisplay(evt){
+    $('#adddisplay').removeClass('show');
+    $('#adddisplay').addClass('hide');
+  };  
+  var hideDisplayButton = $('#hidepanel').on('click', hideAddDisplay)
+
+);
+
 var ViewControlsDisplay =  Backbone.View.extend({/*properties*/});
 var viewControlsDisplay = new ViewControlsDisplay({el: '#controlsdisplay'});
 
@@ -56,8 +77,12 @@ $(function(){
 //  $('#catalogue').append(newRcRecord.escape('artist', 'title', 'label', 'year', 'sku', 'copies', 'sale', 'id'));
 });
 
+var ControlDisplayModel =  Backbone.Model.extend();
+
+var newControlDisplayModel = new ControlDisplayModel();
+
 viewControlsDisplay.$el.append(
-//            <ul>
+//            '<ul>
 //              <li id="listcount"></li>
 //            <li><button type="button" id="search" class="controlbutton">Search</button><input type="text" id="searchInput"></li>
 //            <li><label for="autosync">Auto Sync</label>
@@ -68,7 +93,7 @@ viewControlsDisplay.$el.append(
 //              <a href="#adddisplay"><button type="button" id="updatebutton">Update Record</button></a>
 //              <button type="button" id="deletebutton">Delete Record</button><br/></li>
 //            <li><button type="button" id="clearlocal">Delete Collection</button></li>
-//          </ul>
+//          </ul>'
   
 );
 
@@ -76,8 +101,6 @@ viewControlsDisplay.$el.append(
 var ListDisplayModel =  Backbone.Model.extend();
 
 var newListDisplayModel = new ListDisplayModel();
-
-
 
 //newListDisplayModel.set();
 viewListDisplay.$el.append( '<tr><td>' +  newRcRecord.artist +
@@ -91,9 +114,12 @@ viewListDisplay.$el.append( '<tr><td>' +  newRcRecord.artist +
                           '</td><td>' + newRcRecord.id +
                           '</td></tr>');
 
+var AddDisplayModel =  Backbone.Model.extend();
+
+var newAddDisplayModel = new AddDisplayModel();
 //newAddDisplayModel.set();
 viewAddDisplay.$el.append(
-//  <form id="addrecord">
+//  '<form id="addrecord">
 //	<div class="addcol">
 //    <label for="artistInput" >Artist</label><br/>
 //		<input type="text" id="artistInput" tabindex=1/><br/>
@@ -126,7 +152,7 @@ viewAddDisplay.$el.append(
 //    <button type="button" id="commitnew" tabindex=9>Commit Item</button>
 //    <button type="button" id="hidepanel" tabindex=10>Hide Panel</button>
 //	</div>
-//    </form>
+//    </form>'
 );
 
 

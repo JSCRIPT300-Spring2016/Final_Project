@@ -16,7 +16,6 @@ app.use('/rcCollection', rcCollectionRouter);
 
 app.use('/rcRecord', rcRecordRouter);
 
-
 app.listen(3000, function(){
   console.log('listening');
 });
