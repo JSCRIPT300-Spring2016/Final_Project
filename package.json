@@ -1,0 +1,25 @@
+{
+  "name": "final_project",
+  "version": "1.0.0",
+  "description": "to do list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szayshlyy/Final_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/szayshlyy/Final_Project/issues"
+  },
+  "homepage": "https://github.com/szayshlyy/Final_Project#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "lodash": "^4.13.1",
+    "mongoose": "^4.4.19"
+  }
+}

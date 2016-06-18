@@ -17,6 +17,3 @@ Fork this repository for your final project. For week 3, you will be adding your
 *include your proposal in this README after this line:*
 
 
-For the final project I would like to create a band name generator. I will have list of adjectives, verbs, and nouns, and at random it will combine these three words to create a wonky band name e.g. Pink Dancing Cup Holders.
-
-I'm open to suggestions for a project as I'm not sure if I will be able to incorporate all the requirements for this assignment.
