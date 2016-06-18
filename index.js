@@ -14,16 +14,17 @@ messenger('message from Gandalf');
 
 var db = mongoose.connect('mongodb://localhost/propsAPI');
 var app = express();
+var port = process.env.PORT || 3000;
+var root = path.resolve(__dirname, 'public');
 
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
 //app.use(bodyParser.urlencoded({ extended: false }));
-
-app.use('/trucks', truckRouter);
+/*app.use('/trucks', truckRouter);
 app.use('/food-types', foodTypeRouter);
 app.use('/food-trucks', foodTypeRouter);
 app.use('/today', foodTypeRouter);
-app.use('/props', foodTypeRouter);
+app.use('/props', foodTypeRouter);*/
 
 app.use(express.static(root));
 app.use('/api/trucks', truckAPIRouter);
