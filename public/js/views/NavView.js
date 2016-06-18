@@ -5,23 +5,23 @@ var vent = require('../events/Vent');
 
 module.exports = Backbone.View.extend({
   events: {
-    'click #allTrucks': 'handleAllTrucks',
-    'click #foodTypes': 'handleFoodTypes',
-    'click #today': 'handleToday'
+    'click #allProps': 'allProps',
+    'click #mdfProps': 'mdfProps',
+    'click #dueThisWeek': 'dueThisWeek'
   },
-  handleAllTrucks: function (ev) {
+  handleAllProps: function (ev) {
     ev.preventDefault();
     var path  = ev.currentTarget.href.replace(location.origin, '');
-    vent.trigger('allTrucks:selected', { path: path });
+    vent.trigger('allProps:selected', { path: path });
   },
-  handleFoodTypes: function (ev) {
+  handleMdfProps: function (ev) {
     ev.preventDefault();
     var path  = ev.currentTarget.href.replace(location.origin, '');
-    vent.trigger('foodTypes:selected', { path: path });
+    vent.trigger('mdfProps:selected', { path: path });
   },
-  handleToday: function (ev) {
+  handleDueThisWeek: function (ev) {
     ev.preventDefault();
     var path  = ev.currentTarget.href.replace(location.origin, '');
-    vent.trigger('today:selected', { path: path });
+    vent.trigger('dueThisWeek:selected', { path: path });
   }
 });

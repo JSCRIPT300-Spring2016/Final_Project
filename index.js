@@ -27,7 +27,7 @@ app.use('/today', foodTypeRouter);
 app.use('/props', foodTypeRouter);*/
 
 app.use(express.static(root));
-app.use('/api/trucks', truckAPIRouter);
+app.use('/trucks', truckAPIRouter);
 app.use(spaRoute(path.resolve(root, 'index.html')));
 
 app.listen(3000, function () {

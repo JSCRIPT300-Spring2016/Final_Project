@@ -12,12 +12,12 @@ module.exports = Backbone.View.extend({
   },
   initialize: function () {
     var navView = new NavView({ el: '#foodTruckNav' });
-    var navigationEvents = ['allTrucks', 'foodTypes', 'today', 'foodType', 'foodTruck', 'home'];
+    var navigationEvents = ['allProps', 'mdfProps', 'dueThisWeek' 'home'];
 
     this.appRouter = new AppRouter({ appController: appController });
 
     this.navigateSelected = this.navigateSelected.bind(this);
-    navigationEvents.forEach(function (event) {
+    navigationEvents.forEach(function (event) { 
       vent.on(event + ':selected', this.navigateSelected);
     }, this);
 
