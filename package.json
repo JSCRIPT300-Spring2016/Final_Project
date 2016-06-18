@@ -1,0 +1,27 @@
+{
+  "name": "final_project",
+  "version": "1.0.0",
+  "description": "Final Project for JS300",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasong-peakbagger/Final_Project.git"
+  },
+  "author": "Jason Goodwin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasong-peakbagger/Final_Project/issues"
+  },
+  "homepage": "https://github.com/jasong-peakbagger/Final_Project#readme",
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "express": "^4.14.0",
+    "lodash": "^4.13.1",
+    "mongoose": "^4.5.0",
+    "underscore": "^1.8.3",
+    "util": "^0.10.3"
+  }
+}
