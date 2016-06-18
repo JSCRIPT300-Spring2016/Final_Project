@@ -1,5 +1,5 @@
 var Workspace = Backbone.Router.extend(
-routes: {
+{routes: {
   'showadddisplay': 'showadddisplay',
   'hideadddisplay': 'hideadddisplay'
   },
@@ -8,16 +8,16 @@ routes: {
     $('#adddisplay').addClass('show');
     var genId = (Math.random()) * (Math.pow(10, 17));
     $('#idInput').val(genId);
-  };
-  var addButton = $('#addnew').on('click', showAddDisplay),
+  },
+//  var addButton = $('#addnew').on('click', showAddDisplay);
       
   hideadddisplay:   function hideAddDisplay(evt){
     $('#adddisplay').removeClass('show');
     $('#adddisplay').addClass('hide');
-  };  
-  var hideDisplayButton = $('#hidepanel').on('click', hideAddDisplay)
+  }, 
+//  var hideDisplayButton = $('#hidepanel').on('click', hideAddDisplay);
 
-);
+});
 
 var ViewControlsDisplay =  Backbone.View.extend({/*properties*/});
 var viewControlsDisplay = new ViewControlsDisplay({el: '#controlsdisplay'});
