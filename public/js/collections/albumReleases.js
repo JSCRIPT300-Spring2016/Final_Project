@@ -5,10 +5,11 @@ var Backbone = require('backbone');
 var AlbumReleases = require('../models/albumReleaseModel');
 
 module.exports = Backbone.Collection.extend({
-    model: albumReleases,
+    model: AlbumReleases,
     url: '/complete-library',
     getLibrary: function () {
-      return model.get('artist');
+      //return model.get('artist');
+      return model;
     }));
   }
 });

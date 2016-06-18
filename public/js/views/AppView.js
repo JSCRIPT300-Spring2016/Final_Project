@@ -8,11 +8,11 @@ var vent = require('../events/Vent');
 
 module.exports = Backbone.View.extend({
   events: {
-    'click .logo__link': 'showHome'
+    //'click .logo__link': 'showHome'
   },
   initialize: function () {
-    var navView = new NavView({ el: '#foodTruckNav' });
-    var navigationEvents = ['allTrucks', 'foodTypes', 'today', 'foodType', 'foodTruck', 'home'];
+    var navView = new NavView({ el: '#libraryNav' });
+    var navigationEvents = ['completeLib'];
 
     this.appRouter = new AppRouter({ appController: appController });
 
@@ -23,11 +23,11 @@ module.exports = Backbone.View.extend({
 
     Backbone.history.start({ pushState: true });
   },
-  showHome: function (ev) {
-    ev.preventDefault();
-    var path  = ev.currentTarget.href.replace(location.origin, '');
-    vent.trigger('home:selected', { path: path });
-  },
+  // showHome: function (ev) {
+  //   ev.preventDefault();
+  //   var path  = ev.currentTarget.href.replace(location.origin, '');
+  //   vent.trigger('home:selected', { path: path });
+  // },
   navigateSelected: function (options) {
     this.appRouter.navigate(options.path);
   }
