@@ -1,6 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var path = require('path');
+var spaRoute = require('./utils/spa-server-route');
 var truckRouter = require('./routes/propRoutes');
 var foodTypeRouter = require('./routes/foodTypeRoutes');
 var truckAPIRouter = require('./routes/propRoutes');
@@ -23,6 +24,10 @@ app.use('/food-types', foodTypeRouter);
 app.use('/food-trucks', foodTypeRouter);
 app.use('/today', foodTypeRouter);
 app.use('/props', foodTypeRouter);
+
+app.use(express.static(root));
+app.use('/api/trucks', truckAPIRouter);
+app.use(spaRoute(path.resolve(root, 'index.html')));
 
 app.listen(3000, function () {
   console.log('listening on port 3000');
