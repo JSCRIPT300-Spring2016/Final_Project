@@ -53,7 +53,6 @@ router.route('/:listId')
       if (error) {
         response.status(500).send(error);
       } else {
-        // this will default to a 200 status
         response.send(result);
       }
     });

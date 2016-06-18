@@ -6,7 +6,7 @@ $(function () {
     var myList = [];
     if (data && Array.isArray(data)) {
       data.forEach(function (item) {
-        myList.push('<li> <span class="delete_link" data-list="' + item._id + '">X</span><a href="/list/' + item._id + '">' + item.item + '</a></li>'); // second item._id was country.country
+        myList.push('<li> <span class="delete_link" data-list="' + item._id + '">X</span><a href="/list/' + item._id + '">' + item.item + '</a></li>');
       });
       $('.toDoListView').append(myList);
     }
@@ -16,7 +16,6 @@ $(function () {
     evt.preventDefault();
     var $form = $(this);
 
-    // serialize will transform our form data into urlencoded notation
     var listData = $form.serialize();
 
     $.ajax({
