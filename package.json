@@ -1,0 +1,35 @@
+{
+  "name": "final_project",
+  "version": "1.0.0",
+  "description": "Final project for JS300 class.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenBagBag/Final_Project.git"
+  },
+  "author": "BenBagBag",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenBagBag/Final_Project/issues"
+  },
+  "homepage": "https://github.com/BenBagBag/Final_Project#readme",
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "body-parser": "^1.15.1",
+    "dateformat": "^1.0.12",
+    "eslint": "^2.11.1",
+    "express": "^4.13.4",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jst": "^1.0.0",
+    "jquery": "^2.2.4",
+    "less": "^2.7.1",
+    "mongod": "^1.3.0",
+    "mongodb": "^2.1.21",
+    "underscore": "^1.8.3"
+  }
+}
