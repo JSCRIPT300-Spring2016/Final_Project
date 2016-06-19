@@ -37,7 +37,9 @@ function deletePlant(name) {
 
 function findPlantsByDate(date) {
   var currentPlants = _.filter(plantList, function(plant) {
-    return (plant.datePlanted <= date && date <= plant.dateHarvested);
+    var jsDatePlanted = new Date(plant.datePlanted);
+    var jsDateHarvested = new Date(plant.dateHarvested);
+    return (jsDatePlanted <= date && date <= jsDateHarvested);
   });
   return currentPlants;
 }
@@ -57,8 +59,18 @@ function showSoonToPlantPlants() {
   // return soonToPlant;
 }
 
+function showSoonToHarvestPlants() {
+  var today = new Date();
+  var soonToPlant = _.filter(plantList, function(plant) {
+    var jsDate = new Date(plant.dateHarvested);
+    return ((jsDate - (14 * 24 * 60 * 60 * 1000)) <= today && today + (14 * 24 * 60 * 60 *1000) <= dateHarvested);
+  });
+}
+
 module.exports = {
   addPlant: addPlant,
   deletePlant: deletePlant,
-  findPlantsByDate: findPlantsByDate
+  findPlantsByDate: findPlantsByDate,
+  showSoonToPlantPlants: showSoonToPlantPlants,
+  showSoonToHarvestPlants: showSoonToHarvestPlants
 }
