@@ -53,18 +53,20 @@ function showSoonToPlantPlants() {
   // returning the entire plantList just to test that the route works
   return plantList;
   // var today = new Date();
+  // var jsDate = new Date(plant.datePlanted);
   // var soonToPlant = _.filter(plantList, function(plant) {
-  //   return ((plant.datePlanted - (14 * 24 * 60 * 60 * 1000)) <= today && (today + (14 * 24 * 60 * 60 * 1000)) <= plant.datePlanted);
+  //   return ((jsDate - (14 * 24 * 60 * 60 * 1000)) <= today && (today + (14 * 24 * 60 * 60 * 1000)) <= jsDate);
   // });
   // return soonToPlant;
 }
 
 function showSoonToHarvestPlants() {
   var today = new Date();
-  var soonToPlant = _.filter(plantList, function(plant) {
+  var soonToHarvest = _.filter(plantList, function(plant) {
     var jsDate = new Date(plant.dateHarvested);
     return ((jsDate - (14 * 24 * 60 * 60 * 1000)) <= today && today + (14 * 24 * 60 * 60 *1000) <= dateHarvested);
   });
+  return soonToHarvest;
 }
 
 module.exports = {
