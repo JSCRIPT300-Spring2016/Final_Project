@@ -13561,11 +13561,10 @@ function allPlants() {
 }
 
 function showSoonToPlantPlants() {
-  PlantListView.showSoonToPlantPlants();
-  // console.log('we are trying to list plants to plant soon');
-  //this is not producing a list of plants from the plant list
-  // var plantCollection = new PlantListCollection();
-  // console.log(plantCollection);
+  console.log('made it to the controller');
+  var plantCollection = new PlantListCollection();
+  console.log('if we got any plants from the server, they should print in the console now');
+  console.log(plantCollection);
 }
 
 module.exports = {
@@ -13744,12 +13743,6 @@ module.exports = Backbone.Router.extend({
     options || {};
     this.mainController = options.mainController;
   },
-  // alAlarm: function() {
-  //   alert('oh it works!');
-  // },
-  // noMatch: function(){
-  //   console.log('no matching url');
-  // },
   home: function() {
     this.mainController.showHome();
     this.mainController.allPlants();
@@ -13768,19 +13761,18 @@ var eventHandler = require('../events/eventHandler');
 module.exports = Backbone.View.extend({
   el: '#buttons',
   render: function() {
-    $(this.el).html('<a class="soon-to-plant button" href="/planting">Planting Soon List</a>');
+    $(this.el).html('<div><a id="soon-to-plant" class="button" href="/planting">Planting Soon List</a></div><div><a class="soon-to-harvest button" href="/harvesting">Harvesting Soon</a></div><div><a class="all-plants button" href="/">All Plants</a></div>');
     // href="/planting"
     return this;
   },
   events: {
-    'click .soon-to-plant': this.displaySoonToPlantPlants
+    'click #soon-to-plant': 'showSoonToPlantPlants'
   },
-  displaySoonToPlantPlants: function(e) {
+  showSoonToPlantPlants: function(e) {
     e.preventDefault();
-    alert('yo ho we triggered the event');
-    var path  = ev.currentTarget.href.replace(location.origin, '/');
+    console.log('yo ho we triggered the event');
+    var path  = e.currentTarget.href.replace(location.origin, '/');
     eventHandler.trigger('soonToPlant', { path: path });
-    alert('it works!');
   }
 });
 
@@ -13846,11 +13838,11 @@ var plantItemModel = require('../models/plant');
 module.exports = Backbone.View.extend({
   tagName: 'li',
   template: TFT.plantItem,
-  // model: 'plant',
+  model: 'plant',
   events: {},
-  initialize: function() {
-    this.model.on('change', this.render, this);
-  },
+  // initialize: function() {
+  //   this.model.on('change', this.render, this);
+  // },
   render: function() {
     this.$el.append(this.template(this.model.toJSON()));
     return this;

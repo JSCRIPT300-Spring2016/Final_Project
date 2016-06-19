@@ -33,11 +33,10 @@ function allPlants() {
 }
 
 function showSoonToPlantPlants() {
-  PlantListView.showSoonToPlantPlants();
-  // console.log('we are trying to list plants to plant soon');
-  //this is not producing a list of plants from the plant list
-  // var plantCollection = new PlantListCollection();
-  // console.log(plantCollection);
+  console.log('made it to the controller');
+  var plantCollection = new PlantListCollection();
+  console.log('if we got any plants from the server, they should print in the console now');
+  console.log(plantCollection);
 }
 
 module.exports = {

@@ -5,18 +5,17 @@ var eventHandler = require('../events/eventHandler');
 module.exports = Backbone.View.extend({
   el: '#buttons',
   render: function() {
-    $(this.el).html('<a class="soon-to-plant button" href="/planting">Planting Soon List</a>');
+    $(this.el).html('<div><a id="soon-to-plant" class="button" href="/planting">Planting Soon List</a></div><div><a class="soon-to-harvest button" href="/harvesting">Harvesting Soon</a></div><div><a class="all-plants button" href="/">All Plants</a></div>');
     // href="/planting"
     return this;
   },
   events: {
-    'click .soon-to-plant': this.displaySoonToPlantPlants
+    'click #soon-to-plant': 'showSoonToPlantPlants'
   },
-  displaySoonToPlantPlants: function(e) {
+  showSoonToPlantPlants: function(e) {
     e.preventDefault();
-    alert('yo ho we triggered the event');
-    var path  = ev.currentTarget.href.replace(location.origin, '/');
+    console.log('yo ho we triggered the event');
+    var path  = e.currentTarget.href.replace(location.origin, '/');
     eventHandler.trigger('soonToPlant', { path: path });
-    alert('it works!');
   }
 });

@@ -50,6 +50,7 @@ function getPlants() {
 }
 
 function showSoonToPlantPlants() {
+  console.log('triggered show soon to plant');
   // returning the entire plantList just to test that the route works
   return plantList;
   // var today = new Date();

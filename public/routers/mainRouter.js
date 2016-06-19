@@ -14,12 +14,6 @@ module.exports = Backbone.Router.extend({
     options || {};
     this.mainController = options.mainController;
   },
-  // alAlarm: function() {
-  //   alert('oh it works!');
-  // },
-  // noMatch: function(){
-  //   console.log('no matching url');
-  // },
   home: function() {
     this.mainController.showHome();
     this.mainController.allPlants();

@@ -7,7 +7,7 @@ var router = express.Router();
 // for body-parser, request.body's field names are the same as input form names
 router.route('/')
   .get(function(request, response) {
-    response.status(200).json(garden.getPlants());
+   response.status(200).json(garden.getPlants());
   })
   .post(function(request, response) {
     var newPlant = request.body;
@@ -15,7 +15,7 @@ router.route('/')
     if (!newPlant) {
       response.status(400).json('problem with adding plant');
     } else {
-      newBook = garden.addPlant(newPlant);
+      newPlant = garden.addPlant(newPlant);
       response.status(201).send(newPlant);
     }
   });

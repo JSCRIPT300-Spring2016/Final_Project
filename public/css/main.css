@@ -1,0 +1,23 @@
+.button {
+  background-color: #009900;
+  border: 6px solid #009933;
+  border-radius: 5px;
+  color: #FFF;
+  margin: .25rem;
+  padding: .25rem;
+  text-decoration: none;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+#buttons {
+  flex-direction: row;
+}
+
+#header {
+  align-items: center;
+  flex-direction: column;
+}

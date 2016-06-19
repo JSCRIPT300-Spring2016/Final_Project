@@ -10,11 +10,11 @@ var plantItemModel = require('../models/plant');
 module.exports = Backbone.View.extend({
   tagName: 'li',
   template: TFT.plantItem,
-  // model: 'plant',
+  model: 'plant',
   events: {},
-  initialize: function() {
-    this.model.on('change', this.render, this);
-  },
+  // initialize: function() {
+  //   this.model.on('change', this.render, this);
+  // },
   render: function() {
     this.$el.append(this.template(this.model.toJSON()));
     return this;
