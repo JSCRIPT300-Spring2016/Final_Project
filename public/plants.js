@@ -25,4 +25,4 @@ module.exports = [{
         "spaceNeededPerPlant": 1,
         "datePlanted": "2016-04-10T07:00:00.000Z",
         "dateHarvested": "2016-06-10T07:00:00.000Z"
-      }]
+    }]

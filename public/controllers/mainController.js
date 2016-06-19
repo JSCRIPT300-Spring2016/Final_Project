@@ -14,6 +14,7 @@ var buttons = new Buttons();
 // var formView = new FormView();
 
 eventHandler.on('soonToPlant', showSoonToPlantPlants);
+eventHandler.on('soonToHarvest', showSoonToHarvestPlants);
 
 function showHome() {
   console.log('you should see the header');
@@ -37,10 +38,28 @@ function showSoonToPlantPlants() {
   var plantCollection = new PlantListCollection();
   console.log('if we got any plants from the server, they should print in the console now');
   console.log(plantCollection);
+  // plantCollection.reset(plants);
+  _(plantCollection.models).each(function(plant) {
+    var view = new PlantListView({ model: plant });
+    $('#list-of-plants').html(view.render().el);
+  });
+}
+
+function showSoonToHarvestPlants() {
+  var plantCollection = new PlantListCollection();
+  console.log('if we got any plants from the server, they should print in the console now');
+  console.log(plantCollection);
+
+  // plantCollection.reset(plants);
+  _(plantCollection.models).each(function(plant) {
+    var view = new PlantListView({ model: plant });
+    $('#list-of-plants').html(view.render().el);
+  });
 }
 
 module.exports = {
   showHome: showHome,
   allPlants: allPlants,
-  showSoonToPlantPlants: showSoonToPlantPlants
+  showSoonToPlantPlants: showSoonToPlantPlants,
+  showSoonToHarvestPlants: showSoonToHarvestPlants
 }

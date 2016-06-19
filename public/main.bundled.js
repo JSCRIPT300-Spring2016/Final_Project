@@ -13542,6 +13542,7 @@ var buttons = new Buttons();
 // var formView = new FormView();
 
 eventHandler.on('soonToPlant', showSoonToPlantPlants);
+eventHandler.on('soonToHarvest', showSoonToHarvestPlants);
 
 function showHome() {
   console.log('you should see the header');
@@ -13565,12 +13566,30 @@ function showSoonToPlantPlants() {
   var plantCollection = new PlantListCollection();
   console.log('if we got any plants from the server, they should print in the console now');
   console.log(plantCollection);
+  // plantCollection.reset(plants);
+  _(plantCollection.models).each(function(plant) {
+    var view = new PlantListView({ model: plant });
+    $('#list-of-plants').html(view.render().el);
+  });
+}
+
+function showSoonToHarvestPlants() {
+  var plantCollection = new PlantListCollection();
+  console.log('if we got any plants from the server, they should print in the console now');
+  console.log(plantCollection);
+
+  // plantCollection.reset(plants);
+  _(plantCollection.models).each(function(plant) {
+    var view = new PlantListView({ model: plant });
+    $('#list-of-plants').html(view.render().el);
+  });
 }
 
 module.exports = {
   showHome: showHome,
   allPlants: allPlants,
-  showSoonToPlantPlants: showSoonToPlantPlants
+  showSoonToPlantPlants: showSoonToPlantPlants,
+  showSoonToHarvestPlants: showSoonToHarvestPlants
 }
 
 },{"../collections/PlantListCollection":5,"../events/eventHandler":7,"../models/plant":9,"../plants":10,"../views/ButtonView":12,"../views/FormView":13,"../views/header":15,"../views/plantListView":16,"underscore":4}],7:[function(require,module,exports){
@@ -13724,7 +13743,7 @@ module.exports = [{
         "spaceNeededPerPlant": 1,
         "datePlanted": "2016-04-10T07:00:00.000Z",
         "dateHarvested": "2016-06-10T07:00:00.000Z"
-      }]
+    }]
 
 },{}],11:[function(require,module,exports){
 var Backbone = require('backbone');
@@ -13750,6 +13769,10 @@ module.exports = Backbone.Router.extend({
   soonToPlantList: function() {
     this.mainController.showHome();
     this.mainController.showSoonToPlantPlants();
+  },
+  soonToHarvestList: function() {
+    this.mainController.showHome();
+    this.mainController.showSoonToHarvestPlants();
   }
 });
 
@@ -13761,18 +13784,24 @@ var eventHandler = require('../events/eventHandler');
 module.exports = Backbone.View.extend({
   el: '#buttons',
   render: function() {
-    $(this.el).html('<div><a id="soon-to-plant" class="button" href="/planting">Planting Soon List</a></div><div><a class="soon-to-harvest button" href="/harvesting">Harvesting Soon</a></div><div><a class="all-plants button" href="/">All Plants</a></div>');
+    $(this.el).html('<div><a id="soon-to-plant" class="button" href="/planting">Planting Soon List</a></div><div><a id="soon-to-harvest" class="button" href="/harvesting">Harvesting Soon</a></div><div><a class="all-plants button" href="/">All Plants</a></div>');
     // href="/planting"
     return this;
   },
   events: {
-    'click #soon-to-plant': 'showSoonToPlantPlants'
+    'click #soon-to-plant': 'showSoonToPlantPlants',
+    'click #soon-to-harvest': 'showSoonToHarvestPlants'
   },
   showSoonToPlantPlants: function(e) {
     e.preventDefault();
     console.log('yo ho we triggered the event');
     var path  = e.currentTarget.href.replace(location.origin, '/');
     eventHandler.trigger('soonToPlant', { path: path });
+  },
+  showSoonToHarvestPlants: function(e) {
+    e.preventDefault();
+    var path  = e.currentTarget.href.replace(location.origin, '/');
+    eventHandler.trigger('soonToHarvest', { path: path });
   }
 });
 
@@ -13847,9 +13876,9 @@ module.exports = Backbone.View.extend({
     this.$el.append(this.template(this.model.toJSON()));
     return this;
   },
-  showSoonToPlantPlants: function() {
-    this.$el.html('<p>Make the plants go here</p>');
-  }
+  // showSoonToPlantPlants: function() {
+  //   this.$el.html('<p>Make the plants go here</p>');
+  // }
 });
 
 },{"../collections/PlantListCollection":5,"../models/plant":9,"../plants":10,"backbone":1}]},{},[8]);

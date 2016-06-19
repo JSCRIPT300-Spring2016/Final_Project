@@ -21,5 +21,9 @@ module.exports = Backbone.Router.extend({
   soonToPlantList: function() {
     this.mainController.showHome();
     this.mainController.showSoonToPlantPlants();
+  },
+  soonToHarvestList: function() {
+    this.mainController.showHome();
+    this.mainController.showSoonToHarvestPlants();
   }
 });
