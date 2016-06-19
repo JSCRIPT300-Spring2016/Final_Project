@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <meta charset="utf-8">
+    <title>Inventory Location Management</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Inventory Location Managment</h1>
+        </br>
+        <form id="addInventoryLocation" class="form-horizontal">
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">Location Name:</label>
+            <div class="col-sm-10">
+              <input type="text"  class="form-control" id="inventorylocationName" name="name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="type" class="col-sm-2 control-label">Type:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inventorylocationType" name="type">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="status" class="col-sm-2 control-label">Status:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inventorylocationStatus" name="status">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="latitude" class="col-sm-2 control-label">Latitude:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inventorylocationLatitude" name="latitude">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="longitude" class="col-sm-2 control-label">Longitude:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inventorylocationLongitude" name="longitude">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="product" class="col-sm-2 control-label">Product:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inventorylocationProduct" name="product">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="productQty" class="col-sm-2 control-label">Product Quantity:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inventorylocationProductQty" name="productQty">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" class="btn btn-primary" value="Add Inventory Location">
+            </div>
+          </div>
+        </form>
+
+      </br>
+
+        <table id="allInventoryLocations" class="table table-striped">
+          <tr id="statusControl"><button id="activeLocations" class="btn btn-success btn-xs delete-location">Active Locations</button><button id="InactiveLocations" class="btn btn-warning btn-xs delete-location">Inactive Locations</button></tr>
+          <thead>
+            <tr class="active">
+              <th>Name</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Product</th>
+              <th>Product Quantity</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+        </table>
+    </div>
+
+    <script id="allInventoryLocationsTemplate" type="text/template">
+      <td><%= name %></td>
+      <td><%= type %></td>
+      <td><%= status %></td>
+      <td><%= latitude %></td>
+      <td><%= longitude %></td>
+      <td><%= product %></td>
+      <td><%= productQty %></td>
+      <td><button class="btn btn-danger btn-xs delete-location">Remove</button></td>
+    </script>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://underscorejs.org/underscore.js"></script>
+    <script src="http://backbonejs.org/backbone.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/models.js"></script>
+    <script type="text/javascript" src="js/collections.js"></script>
+    <script type="text/javascript" src="js/addLocationView.js"></script>
+    <script type="text/javascript" src="js/singleLocationView.js"></script>
+    <script type="text/javascript" src="js/allLocationsView.js"></script>
+    <script type="text/javascript" src="js/appView.js"></script>
+    <script type="text/javascript" src="js/router.js"></script>
+
+    <script>
+      new App.Router;
+      Backbone.history.start();
+    </script>
+  </body>
+</html>
