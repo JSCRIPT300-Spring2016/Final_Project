@@ -1,0 +1,24 @@
+{
+  "name": "Yelp-App",
+  "version": "0.0.0",
+  "description": "Review portal for Restaurants",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karthik",
+  "license": "ISC",
+    "dependencies": {
+    "backbone": "^1.3.3",
+    "express": "^4.13.4",
+    "jquery": "^2.2.4",
+    "lodash": "^4.13.1",
+    "mongoose": "^4.4.20",
+    "body-parser":"1.15.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.8.0",
+    "grunt-contrib-jst": "^0.6.0"
+  }
+}
