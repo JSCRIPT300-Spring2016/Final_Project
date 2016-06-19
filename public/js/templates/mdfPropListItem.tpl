@@ -1,0 +1,1 @@
+<a class="foodTypeLink" href="/mdfProps/<%= encodeURIComponent(type) %>"><%= type %></a>
