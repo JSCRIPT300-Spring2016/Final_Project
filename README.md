@@ -16,4 +16,4 @@ Fork this repository for your final project. For week 3, you will be adding your
 
 *include your proposal in this README after this line:*
 
-I would like to make a cider-rating application, where a user rates it based on a number of different catagories 1-5 (sweetness, acidity, fruitiness, carbonation, etc.) -- similar to untapped.
+I would like to make a cider-rating application, where a user rates it based on a number of different catagories 1-5 (sweetness, acidity, fruitiness, carbonation, etc.) -- similar to a very stripped-down version of untapped, though looking more at the attributes of a cider rather than if someone liked it or not.

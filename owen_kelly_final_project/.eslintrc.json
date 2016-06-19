@@ -1,0 +1,35 @@
+{
+  "env": {
+    "browser": "true",
+    "node": "true",
+    "jquery": "true",
+    "mongo": "true"
+  },
+  "globals": {
+    "_": "true",
+    "Backbone": "true",
+    "JST": "true",
+    "vent": "true",
+    "Review": "true",
+    "Review": "true",
+    "Reviews": "true",
+    "Cider": "true",
+    "Ciders": "true",
+    "exports": "true",
+    "path": "true",
+    "results": "true"
+  },
+  "rules": {
+    "indent": ["error", 2],
+    "semi": ["error", "always"],
+    "no-undef": "error",
+    "eqeqeq": "error",
+    "jsx-quotes": ["error", "prefer-single"],
+    "no-console": "error",
+    "comma-dangle": ["error", "never"],
+    "max-len": ["error", 80, 2, { "ignoreUrls": true, "ignoreComments": true }],
+    "no-trailing-spaces": "error",
+    "object-curly-spacing": ["error", "always"],
+    "newline-before-return": "error"
+  }
+}
