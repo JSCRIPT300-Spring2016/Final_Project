@@ -13768,7 +13768,7 @@ var eventHandler = require('../events/eventHandler');
 module.exports = Backbone.View.extend({
   el: '#buttons',
   render: function() {
-    $(this.el).html('<p class="soon-to-plant"><a href="/planting">Planting Soon List</a></p>');
+    $(this.el).html('<a class="soon-to-plant button" href="/planting">Planting Soon List</a>');
     // href="/planting"
     return this;
   },
