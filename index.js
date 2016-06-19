@@ -7,9 +7,7 @@ var foodTypeRouter = require('./routes/foodTypeRoutes');
 var truckAPIRouter = require('./routes/propRoutes');
 
 var messenger = require('./custom_messenger');
-//call like function
 messenger('find prop price');
-//messenger.message('message from bilbo');
 
 
 var db = mongoose.connect('mongodb://localhost/propsAPI');
