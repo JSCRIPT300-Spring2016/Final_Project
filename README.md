@@ -15,3 +15,5 @@ Fork this repository for your final project. For week 3, you will be adding your
 **I strongly recommend you keep your project simple**. There is a lot to do here, and any complexity will blow up the amount of time and effort required to complete it. Remember to build the simplest thing possible to achieve the task your application is meant to accomplish and avoid feature creep. You can always iterate on what you've built *after* you've completed the minimum viable product.
 
 *include your proposal in this README after this line:*
+
+I would like to make a cider-rating application, where a user rates it based on a number of different catagories 1-5 (sweetness, acidity, fruitiness, carbonation, etc.) -- similar to a very stripped-down version of untapped, though looking more at the attributes of a cider rather than if someone liked it or not.
