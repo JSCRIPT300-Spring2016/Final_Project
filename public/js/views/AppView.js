@@ -12,7 +12,7 @@ module.exports = Backbone.View.extend({
   },
   initialize: function () {
     var navView = new NavView({ el: '#foodTruckNav' });
-    var navigationEvents = ['allProps', 'mdfProps', 'dueThisWeek' 'home'];
+    var navigationEvents = ['allProps', 'mdfProps', 'dueThisWeek', 'home'];
 
     this.appRouter = new AppRouter({ appController: appController });
 

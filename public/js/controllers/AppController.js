@@ -15,7 +15,8 @@ vent.on('foodType:selected', showFoodTrucksByFoodType);
 vent.on('foodTruck:selected', showFoodTruck);
 vent.on('home:selected', showHome);
 vent.on('allProps:selected', showAllProps);
-
+vent.on('mdfProps:selected', showMdfProps);
+vent.on('dueThisWeek:selected', showDueThisWeek);
 
 function showHome() {
   jqxhr.done(function () {
@@ -64,11 +65,26 @@ function showFoodTrucksToday() {
   });
 }
 
+function showMdfProps() {
+  jqxhr.done(function () {
+    resultsView.showMdfProps();
+  });
+}
+
+function showDueThisWeek() {
+  jqxhr.done(function () {
+    resultsView.showDueThisWeek();
+  });
+}
+
 module.exports = {
   showHome: showHome,
   showAllFoodTrucks: showAllFoodTrucks,
   showFoodTruck: showFoodTruck,
   showAllFoodTypes: showAllFoodTypes,
   showFoodTrucksByFoodType: showFoodTrucksByFoodType,
-  showFoodTrucksToday: showFoodTrucksToday
+  showFoodTrucksToday: showFoodTrucksToday,
+  showAllProps: showAllProps,
+  showMdfProps: showMdfProps,
+  showDueThisWeek: showDueThisWeek
 };
