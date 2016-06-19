@@ -8,7 +8,7 @@ var truckAPIRouter = require('./routes/propRoutes');
 
 var messenger = require('./custom_messenger');
 //call like function
-messenger('message from Gandalf');
+messenger('find prop price');
 //messenger.message('message from bilbo');
 
 
