@@ -8,7 +8,8 @@ var TrucksByTypeView = require('./TrucksByTypeView');
 var FoodTruckView = require('./FoodTruckView');
 var FoodTrucks = require('../collections/FoodTrucks');
 var PropsView = require('./PropsView');
-var Props = require('../collections/Props')
+var Props = require('../collections/Props');
+var allProps = require('../collections/allProps');
 
 module.exports = Backbone.View.extend({
   initialize: function () {
