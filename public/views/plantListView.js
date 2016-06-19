@@ -18,5 +18,8 @@ module.exports = Backbone.View.extend({
   render: function() {
     this.$el.append(this.template(this.model.toJSON()));
     return this;
+  },
+  showSoonToPlantPlants: function() {
+    this.$el.html('<p>Make the plants go here</p>');
   }
 });

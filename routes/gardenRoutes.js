@@ -20,7 +20,7 @@ router.route('/')
     }
   });
 
-router.route('/#planting')
+router.route('/planting')
   .get(function(request, response) {
     response.status(200).json(garden.showSoonToPlantPlants());
   });

@@ -18,6 +18,6 @@ module.exports = Backbone.View.extend({
     // may need vent
 
     // Backbone.history.start({ hashChange: false, pushState: true });
-    Backbone.history.start();
+    Backbone.history.start({ pushState: true });
   }
 });

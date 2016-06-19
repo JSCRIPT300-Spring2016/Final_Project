@@ -13525,10 +13525,12 @@ module.exports = Backbone.Collection.extend({
   url: '/api/garden'
 });
 
-},{"../models/plant":8,"backbone":1}],6:[function(require,module,exports){
+},{"../models/plant":9,"backbone":1}],6:[function(require,module,exports){
 var _ = require('underscore');
 
 var Header = require('../views/header');
+var Buttons = require('../views/ButtonView');
+var eventHandler = require('../events/eventHandler');
 var FormView = require('../views/FormView');
 var plantModel = require('../models/plant');
 var PlantListView = require('../views/plantListView');
@@ -13536,34 +13538,49 @@ var PlantListCollection = require('../collections/PlantListCollection');
 var plants = require('../plants');
 
 var header = new Header();
-var formView = new FormView();
+var buttons = new Buttons();
+// var formView = new FormView();
 
-module.exports = {
-  showHome: function() {
-    console.log('you should see the header');
-    header.render();
-    formView.render();
-  },
+eventHandler.on('soonToPlant', showSoonToPlantPlants);
 
-  allPlants: function() {
-    var that = this;
-    var plantCollection = new PlantListCollection();
-    plantCollection.reset(plants);
-    _(plantCollection.models).each(function(plant) {
-      var view = new PlantListView({ model: plant });
-      $('#list-of-plants').append(view.render().el);
-    });
-  },
-
-  showSoonToPlantPlants: function() {
-    console.log('we are trying to list plants to plant soon');
-    //this is not producing a list of plants from the plant list
-    var plantCollection = new PlantListCollection();
-    console.log(plantCollection);
-  }
+function showHome() {
+  console.log('you should see the header');
+  header.render();
+  buttons.render();
+  // formView.render();
 }
 
-},{"../collections/PlantListCollection":5,"../models/plant":8,"../plants":9,"../views/FormView":11,"../views/header":13,"../views/plantListView":14,"underscore":4}],7:[function(require,module,exports){
+function allPlants() {
+  var that = this;
+  var plantCollection = new PlantListCollection();
+  plantCollection.reset(plants);
+  _(plantCollection.models).each(function(plant) {
+    var view = new PlantListView({ model: plant });
+    $('#list-of-plants').append(view.render().el);
+  });
+}
+
+function showSoonToPlantPlants() {
+  PlantListView.showSoonToPlantPlants();
+  // console.log('we are trying to list plants to plant soon');
+  //this is not producing a list of plants from the plant list
+  // var plantCollection = new PlantListCollection();
+  // console.log(plantCollection);
+}
+
+module.exports = {
+  showHome: showHome,
+  allPlants: allPlants,
+  showSoonToPlantPlants: showSoonToPlantPlants
+}
+
+},{"../collections/PlantListCollection":5,"../events/eventHandler":7,"../models/plant":9,"../plants":10,"../views/ButtonView":12,"../views/FormView":13,"../views/header":15,"../views/plantListView":16,"underscore":4}],7:[function(require,module,exports){
+var _ = require('underscore');
+var Backbone = require('backbone');
+
+module.exports = _.extend({}, Backbone.Events);
+
+},{"backbone":1,"underscore":4}],8:[function(require,module,exports){
 // model: https://github.com/ccoenraets/nodecellar/blob/e249ca3be83e75a26710d81ce5ad95c3404f78d5/public/js/main.js
 var Backbone = require('backbone');
 
@@ -13660,7 +13677,7 @@ $(function () {
 //
 // Backbone.history.start();
 
-},{"./views/MainView":12,"backbone":1,"jquery":3}],8:[function(require,module,exports){
+},{"./views/MainView":14,"backbone":1,"jquery":3}],9:[function(require,module,exports){
 var Backbone = require('backbone');
 var dateFormat = require('dateformat');
 
@@ -13680,7 +13697,7 @@ module.exports = Backbone.Model.extend({
   }
 });
 
-},{"backbone":1,"dateformat":2}],9:[function(require,module,exports){
+},{"backbone":1,"dateformat":2}],10:[function(require,module,exports){
 module.exports = [{
     "name": "lettuce",
     "number": 4,
@@ -13710,7 +13727,7 @@ module.exports = [{
         "dateHarvested": "2016-06-10T07:00:00.000Z"
       }]
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 var Backbone = require('backbone');
 var header = require('../views/header');
 
@@ -13743,7 +13760,31 @@ module.exports = Backbone.Router.extend({
   }
 });
 
-},{"../views/header":13,"backbone":1}],11:[function(require,module,exports){
+},{"../views/header":15,"backbone":1}],12:[function(require,module,exports){
+var Backbone = require('backbone');
+
+var eventHandler = require('../events/eventHandler');
+
+module.exports = Backbone.View.extend({
+  el: '#buttons',
+  render: function() {
+    $(this.el).html('<p class="soon-to-plant"><a href="/planting">Planting Soon List</a></p>');
+    // href="/planting"
+    return this;
+  },
+  events: {
+    'click .soon-to-plant': this.displaySoonToPlantPlants
+  },
+  displaySoonToPlantPlants: function(e) {
+    e.preventDefault();
+    alert('yo ho we triggered the event');
+    var path  = ev.currentTarget.href.replace(location.origin, '/');
+    eventHandler.trigger('soonToPlant', { path: path });
+    alert('it works!');
+  }
+});
+
+},{"../events/eventHandler":7,"backbone":1}],13:[function(require,module,exports){
 var Backbone = require('backbone');
 
 module.exports = Backbone.View.extend({
@@ -13754,7 +13795,7 @@ module.exports = Backbone.View.extend({
   }
 });
 
-},{"backbone":1}],12:[function(require,module,exports){
+},{"backbone":1}],14:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var mainRouter = require('../routers/mainRouter');
@@ -13775,11 +13816,11 @@ module.exports = Backbone.View.extend({
     // may need vent
 
     // Backbone.history.start({ hashChange: false, pushState: true });
-    Backbone.history.start();
+    Backbone.history.start({ pushState: true });
   }
 });
 
-},{"../controllers/mainController":6,"../routers/mainRouter":10,"backbone":1}],13:[function(require,module,exports){
+},{"../controllers/mainController":6,"../routers/mainRouter":11,"backbone":1}],15:[function(require,module,exports){
 var Backbone = require('backbone');
 
 module.exports = Backbone.View.extend({
@@ -13792,7 +13833,7 @@ module.exports = Backbone.View.extend({
  }
 });
 
-},{"backbone":1}],14:[function(require,module,exports){
+},{"backbone":1}],16:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var plantData = require('../models/plant');
@@ -13813,7 +13854,10 @@ module.exports = Backbone.View.extend({
   render: function() {
     this.$el.append(this.template(this.model.toJSON()));
     return this;
+  },
+  showSoonToPlantPlants: function() {
+    this.$el.html('<p>Make the plants go here</p>');
   }
 });
 
-},{"../collections/PlantListCollection":5,"../models/plant":8,"../plants":9,"backbone":1}]},{},[7]);
+},{"../collections/PlantListCollection":5,"../models/plant":9,"../plants":10,"backbone":1}]},{},[8]);
